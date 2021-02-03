@@ -1,0 +1,11 @@
+
+Micro Assignment #01
+Your task is to design a simple website that creates a "collage" of pictures using just HTML and CSS. The images and a starter HTML document can be downloaded here as a ZIP archive. Your finished product should look like the following image:
+
+Here are some hints to get you started:
+The size of each image is available in the HTML file as a comment
+Make sure your container is big enough to hold your biggest image, and that the container is centered horizontally
+Think about how you can put one image on top of another (hint: refer to today's videos on CSS positioning!)
+Your images should not move when the browser is resized (i.e. the Pikachu image should stay in place in front of the background & tree and should not "slide" when the browser is resized)
+
+When you are finished please upload a copy of this file to your i6 website using the process described in Assignment 01. Name your file micro_assignment_01.html and ensure that it is accessible from within your webdev folder. You will also want to submit a link to your work on NYU Classes under the 'Assignments' tool. Eventually you will want to include this project as a link on your homepage (also described in Assignment 01) but this isn't required for the submission of this micro assignment.
