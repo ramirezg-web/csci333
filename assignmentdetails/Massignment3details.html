@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/assignment03.php -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>CSCI-UA.0061 : Spring 2021</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./Massignment3details_files/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./Massignment3details_files/style.css" rel="stylesheet">
+    
+    <style type="text/css">
+	
+		.imageholder {
+			border: 1px solid #eee;
+			padding: 25px;
+			width: 600px;
+			margin-bottom: 50px;
+		}    
+		
+		.imageholder img {
+			width: 500px;
+		}
+	    
+	</style>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  <style id="holderjs-style" type="text/css"></style><script data-dapp-detection="">!function(){let e=!1;function n(){if(!e){const n=document.createElement("meta");n.name="dapp-detected",document.head.appendChild(n),e=!0}}if(window.hasOwnProperty("ethereum")){if(window.__disableDappDetectionInsertion=!0,void 0===window.ethereum)return;n()}else{var t=window.ethereum;Object.defineProperty(window,"ethereum",{configurable:!0,enumerable:!1,set:function(e){window.__disableDappDetectionInsertion||n(),t=e},get:function(){if(!window.__disableDappDetectionInsertion){const e=arguments.callee;e&&e.caller&&e.caller.toString&&-1!==e.caller.toString().indexOf("getOwnPropertyNames")||n()}return t}})}}();</script></head>
+
+  <body data-new-gr-c-s-check-loaded="14.996.0" data-gr-ext-installed="">
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/index.html">Web Development &amp; Programming, Spring 2021</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li><a href="https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/index.html">Home</a></li>
+            <li><a href="https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/syllabus.html">Syllabus</a></li>
+            <li class="active"><a href="https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/schedule.html">Schedule</a></li>
+          </ul>
+        </div>
+        
+        <div id="content" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" data-read-aloud-multi-block="true">
+	        <h1 class="page-header" data-speechify-sentence="">Macro Assignment 03: Gotta Catch 'em All!</h1>
+					
+		  	<p data-speechify-sentence="">For this assignment you will be creating a Pokemon hunting game the user can play in their browser.  The rules for the game are as follows:</p>
+		  	
+		  	<ul data-read-aloud-multi-block="true">
+			  	<li data-speechify-sentence="">The user starts with 5 Pokeballs and 0 Pokemon.</li>
+			  	<li data-speechify-sentence="">The user is presented with three grassy patches.  Behind one of the cups is hidden a random Pokemon, behind another is hidden 2 additional Pokeballs, and behind the third is nothing.</li>
+			  	<li data-speechify-sentence="">The user is asked to select one of three grassy patches by clicking their mouse on the desired patch.  Every time they click on a patch the user will use 1 of their Pokeballs.</li>
+			  	<li data-speechify-sentence="">If they find a Pokemon the number of caught Pokemon increases.  If they find the 2 Pokeballs their number of Pokeballs increases by 2.  If they do not find anything then nothing happens.</li>
+			  	<li data-speechify-sentence="">In all cases the data displays are updated to reflect the user's current inventory (# of Pokeballs and # of Pokemon caught)</li>
+			  	<li data-speechify-sentence="">The user can then click a "Play Again" button to try another round in which the Pokemon and Pokeballs will be randomly moved to a different patch.  At the end of the round all of the grassy patches should be "locked" and un-clickable (i.e. the user should be prevented from selecting two different grassy patches during the same round) - hint: perhaps you need a global variable to keep track of the "state" of your game?</li>
+			  	<li data-speechify-sentence="">The user can continue to play as long as they have Pokeballs left.  If the user runs out of Pokeballs your program should not allow them to select another grassy patch.  Display some kind of "game over" message when this happens.  Hint: test your program with a lower initial Pokeball amount to make sure this feature works correctly!</li>
+		  	</ul>
+		  	
+		  	<p data-speechify-sentence="">Here is a video example of how the game is played.  Note that you may redesign your game to use your own colors and layout, but the overall gameplay logic should be the same.  <a href="https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/sourcecode/assignment03_images.zip" target="_blank">The graphics being used in the video (background, grass, Pokemon and Pokeballs) can be found here.</a></p>
+
+		  	<div><iframe width="560" height="315" src="./Massignment3details_files/qzlm7PIW3R4.html" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+		  	
+		  	<p data-speechify-sentence="">Here are some overarching hints to help you get started:</p>
+		  	
+		  	<ul data-read-aloud-multi-block="true">
+			  	<li data-speechify-sentence="">Start off by building your HTML &amp; CSS interface.  Ensure that you give the items that you will be accessing via JavaScript a class or ID to make it easy to access them using a DOM query</li>
+			  	<li data-speechify-sentence="">When writing your JavaScript code begin by setting up your DOM queries so that you have easy access to the elements on the page that will need to be changed.</li>
+			  	<li data-speechify-sentence="">Also think about what kinds of global variables you will need in order to keep track of things throughout your game.  Set these up at the beginning of your program as well.</li>
+			  	<li data-speechify-sentence="">What elements on your page need to respond to the mouse?  All of the grass elements will need to be clicked at some point.  For debugging purposes start with just prototyping one of the grass elements.  Once you're happy with how that one element works you can expand your program to support all three elements.</li>
+			  	<li data-speechify-sentence="">The easiest way to "reveal" what is below a grass element is by randomly selecting one of three possibilities - a Pokemon, the Pokeballs or nothing.  There should be an equal chance of either of these events happening (i.e. 33.3% of a Pokemon, 33.3% of the Pokeballs, and 33.3% chance of nothing) - perhaps a random number would be useful here?</li>
+			  	<li data-speechify-sentence="">When a particular event occurs you will need to update your variables (i.e. the user found a Pokemon) as well as the DOM elements on the page to visually show the user their progress.</li>
+			  	<li data-speechify-sentence="">Don't be afraid to create new variables to keep track of things throughout your program. Remember that variables created inside of a function are local to only that function.  If you need to share data between functions perhaps a global variable would be more appropriate.</li>
+			  	<li data-speechify-sentence="">The following arrays may be useful as you try and get your Pokemon images &amp; titles to display correctly:
+			  	
+			  	<pre>// possible pokemon
+let pokemon = ['images/pikachu.png', 'images/bulbasaur.png', 'images/charmander.png', 'images/eevee.png', 'images/squirtle.png'];
+let names = ['Pikachu', 'Bulbasaur', 'Charmander', 'Eevee', 'Squirtle'];</pre>
+			  	</li>
+		  	</ul>
+		  		  			  	
+		  	<p data-speechify-sentence="">Next, select <strong>at least one</strong> of the following features to add to your game.  For extra credit you can add in more than one feature:</p>
+		  	
+		  	<ul data-read-aloud-multi-block="true">
+			  	<li data-speechify-sentence="">Result history: display all previous results of the game (i.e. Bulbasaur found, Pikachu found, Pokeballs found, Nothing found, etc.) - present this in reverse chronological order.  Also allow the user the option to clear the result history.</li>
+			  	<li data-speechify-sentence="">Pokedex: display a detailed listing of how many Pokemon <strong>of each type</strong> have been caught.  For example, 3 Pikachu, 2 Bulbasaur, 0 Charmander, etc.  Present some kind of special message when the user catches at least 1 of each type.</li>
+			  	<li data-speechify-sentence="">"Super item": periodically hide a highly valuable item behind one of the grassy areas, such as +4 Pokeballs or a very rare Pokemon.  The "super item" should use a different graphic.  Don't let the "super item" show up every round (randomly select when you're in "super item" mode).  When you are in "super item" mode let the user know through a message that gets displayed (i.e. "You're in 'Super Item' mode!")</li>
+			  	<li data-speechify-sentence="">Reveal the other grassy areas: after selecting a grassy area reveal what was behind the other two areas that you did not click.  Visually identify these missed items using the CSS "opacity" property to slightly fade them out (more info: <a href="https://www.w3schools.com/css/css_image_transparency.asp" target="_blanik">https://www.w3schools.com/css/css_image_transparency.asp</a>)
+		  	</li></ul>
+		  	
+		  	<p data-speechify-sentence="">Thoroughly test your work and make sure that it meets the requirements set forth above.  When you are finished, post your project to the i6 server and link it from your main menu page.  We should be able to visit your 'webdev' folder and click on the link to the third assignment and visit your page.  Also create a ZIP archive of your work and submit it to NYU classes under the 'Assignment 03' category.</p>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./Massignment3details_files/jquery.min.js"></script>
+    <script src="./Massignment3details_files/bootstrap.min.js"></script>
+    <script src="./Massignment3details_files/docs.min.js"></script>
+  
+
+<div id="speechify-selection-button-container">
+    <button class="always-inactive speechify-button plyr__control" data-loading="false" data-plyr="play">
+      
+<svg class="outline-play-icon" width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M7.125 4.67029C7.29167 4.76651 7.29167 5.00707 7.125 5.1033L1.29481 8.46936C1.12814 8.56559 0.919811 8.4453 0.919811 8.25285L0.919811 1.52073C0.919811 1.32828 1.12814 1.208 1.29481 1.30422L7.125 4.67029Z" fill="white" stroke="#4856fd" stroke-width="1.5"></path>
+</svg>
+
+      
+<svg class="icon--not-pressed" role="presentation" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" viewBox="0 0 26 26">
+  <path fill="#FFF" fill-rule="evenodd" d="M18.594 14.789l-10.7 5.35c-.988.493-2.189.093-2.683-.895C5.072 18.966 5 18.66 5 18.35V7.65c0-1.104.895-2 2-2 .31 0 .617.072.894.211l10.7 5.35c.988.494 1.388 1.695.894 2.683-.193.387-.507.701-.894.895z"></path>
+</svg>
+
+    </button>
+  </div><div id="speechify-paragraph-hover-button-container"></div></body></html>

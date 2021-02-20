@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      #container{
+        width:1280px;
+        height:994px;
+        border:10px solid green;
+        margin:auto;
+        position:relative;
+      }
+
+      h1{
+        position:absolute;
+        top:20px;
+        left:20px;
+        font-size:300%;
+        color:white;
+      }
+      #legobody{
+        position:absolute;
+        bottom:0px;
+        right:200px;
+      }
+      #legohead{
+        position:absolute;
+        bottom:277px;
+        right:275px;
+      }
+      /* #child{
+        position:absolute;
+        top:100px;
+        left:150px;
+        border:solid 1px black;
+        opacity:0.5;
+      } */
+      #time{
+        position:absolute;
+        top:175px;
+        left:100px;
+        color:black;
+        z-index: 1;
+        padding:10px;
+
+      }
+      #numbers{
+        position:absolute;
+        top:200px;
+        padding:10px;
+        left:100px;
+        z-index: 1;
+      }
+      .box{
+        position:absolute;
+        top:170px;
+        left:100px;
+        color:black;
+        border-radius: 25px;
+        background-color: rgb(235,235,252);
+        width:330px;
+        height:100px;
+        border: solid 2px black;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1>hi</h1>
+
+<div id="container">
+<img id="background" src="assignment02_images/backgrounds/night.png" alt="">
+<img id="legobody" src="assignment02_images/bodies/body1.png">
+<img id="legohead" src="assignment02_images/heads/head1.png">
+<!-- <div id="child"> -->
+  <p id="time">The time is</p>
+  <p id="numbers"> your numbers are</p>
+<!-- </div> -->
+<div class="box">
+
+</div>
+
+<script>
+  var words = ['Awesome', 'Fantastic',
+   'Fabulous', 'Superb', 'Perfect', 'Brilliant',
+   'Coming up Roses'];
+
+   var choice=parseInt(Math.random()*words.length);
+   document.write(`<h1> Everything is ${words[choice]}!</h1>`)
+
+   var body = ['assignment02_images/bodies/body1.png',
+   'assignment02_images/bodies/body2.png',
+   'assignment02_images/bodies/body3.png',
+   'assignment02_images/bodies/body4.png',
+   'assignment02_images/bodies/body5.png',
+   'assignment02_images/bodies/body1.png',
+   ];
+
+   var choiceb=parseInt(Math.random()*body.length+1);
+   console.log(choiceb)
+   // document.write(`<img src="${body[choiceb]}">`)
+   var legobody = document.getElementById('legobody');
+  legobody.src='assignment02_images/bodies/body'+choiceb+'.png';
+
+var heads=['assignment02_images/heads/head1.png',
+'assignment02_images/heads/head2.png',
+'assignment02_images/heads/head3.png',
+'assignment02_images/heads/head4.png',
+'assignment02_images/heads/head5.png',
+'assignment02_images/heads/head6.png',
+];
+
+var min = 1;
+var max = 9;
+//Number of numbers to extract
+var stop = 3;
+
+var numbers = [];
+
+for (let i = 0; i < stop; i++) {
+  var n =  Math.floor(Math.random() * max) + min;
+  var check = numbers.includes(n);
+  if(check === false) {
+    numbers.push(n);
+  } else {
+    while(check === true){
+      n = Math.floor(Math.random() * max) + min;
+      check = numbers.includes(n);
+        if(check === false){
+          numbers.push(n);
+        }
+     }
+  }
+}
+num1();
+function num1() {
+  // document.getElementById("numbers").innerHTML = "Your three lucky numbers today are";
+  document.getElementById("numbers").innerHTML = "Your three lucky numbers today are " +numbers.join(", ");
+}
+
+ //
+ // var choice=parseInt(Math.random()*words.length);
+ // document.write(`<h1> Everything is ${words[choice]}!</h1>`)
+
+
+let choiceh=parseInt(Math.random()*heads.length+1);
+console.log(choiceh)
+// document.write(`<img src="${heads[choiceh]}">`)
+
+var legohead = document.getElementById('legohead');
+legohead.src='assignment02_images/heads/head'+choiceh+'.png';
+</script>
+
+<script>
+
+  let now =new Date();
+  console.log(now);
+  let hours=now.getHours()
+  let minutes=now.getMinutes();
+  let seconds=now.getSeconds();
+  console.log("the time is",hours,minutes,seconds);
+  if ((hours >=0) && (hours<6)) {
+    console.log('good night')
+    document.getElementById('time').innerHTML="The time is currently "+ (hours)+":"+minutes+"am - Good night!";
+
+    // document.write("the time is ",hours,":",minutes,"am - Good night!");
+    var background = document.getElementById('background');
+    background.src='assignment02_images/backgrounds/night.png';
+  }
+
+  if ((hours >=6) && (hours<11) && (minutes<59)){
+    console.log('Good Morning!')
+    document.getElementById('time').innerHTML="The time is currently "+ (hours)+":"+minutes+"am - Good morning!";
+
+    // var time=document.getElementsByName('time').innerHTML=
+    // time=`"the time is",hours,":",minutes,"am - Good morning!")`;
+    var background = document.getElementById('background');
+    background.src='assignment02_images/backgrounds/morning.png';
+  }
+  if ((hours >=12) && (hours<18)){
+    console.log('good afternoon')
+    document.getElementById('time').innerHTML="The time is currently "+ (hours-12)+":"+minutes+"pm - Good afternoon!";
+
+    // var time=document.getElementById('time');
+    // time=document.write("the time is ",hours-12,":",minutes,"pm - Good afternoon!");
+
+    var background = document.getElementById('background');
+    background.src='assignment02_images/backgrounds/afternoon.png';
+  }
+
+  if ((hours >=18) && (hours<24)){
+    console.log('good evening')
+    //minus 12
+    document.getElementById('time').innerHTML="The time is currently "+ (hours-12)+":"+minutes+"pm - Good evening!";
+
+    // let time=document.getElementById('time');
+    // time=document.write("the time is ",hours-12,":",minutes," pm - Good evening!");
+    var background = document.getElementById('background');
+      background.src='assignment02_images/backgrounds/evening.png';
+  }
+  // d();
+  // function d(){
+    // document.getElementById('time').innerHTML="the time is ",hours,":",minutes,"am - Good night!";
+
+
+
+
+  </script>
+
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<!-- saved from url=(0073)https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/video_03.php#micro03 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>CSCI-UA.0061 : Spring 2021</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./micro3_files/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./micro3_files/style.css" rel="stylesheet">
+    
+    <style type="text/css">
+		.imageholder {
+			border: 1px solid #eee;
+			padding: 25px;
+			width: 600px;
+			margin-bottom: 50px;
+			text-align: center;
+		}    
+		
+		.imageholder img {
+			width: 500px;
+		}	    	  
+		
+		h3 {
+			margin-top: 50px;
+		}  
+		
+		#hoverbutton1 {
+			width: 100px;
+			height: 25px;
+			background-color: black;
+			color: white;
+			text-align: center;
+		}
+		
+		#hoverbutton1:hover {
+			background-color: yellow;
+			color: black;
+		}
+		
+		#linkbox a {
+			text-decoration: underline;
+		}
+		
+		
+		#linkbox a:link {
+			background-color: white;
+			color: black;
+		}
+		
+		#linkbox a:visited {
+			background-color: green;
+			color: black;
+		}
+
+		#linkbox a:focus {
+			font-size: 200%;
+		}
+				
+		#linkbox a:hover {
+			background-color: yellow;
+			color: black;
+		}
+
+		#linkbox a:active {
+			background-color: blue;
+			color: white;
+		}
+		
+		.no_border_box div {
+			box-sizing: content-box;
+		}
+		
+	</style>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  <style id="holderjs-style" type="text/css"></style><script data-dapp-detection="">!function(){let e=!1;function n(){if(!e){const n=document.createElement("meta");n.name="dapp-detected",document.head.appendChild(n),e=!0}}if(window.hasOwnProperty("ethereum")){if(window.__disableDappDetectionInsertion=!0,void 0===window.ethereum)return;n()}else{var t=window.ethereum;Object.defineProperty(window,"ethereum",{configurable:!0,enumerable:!1,set:function(e){window.__disableDappDetectionInsertion||n(),t=e},get:function(){if(!window.__disableDappDetectionInsertion){const e=arguments.callee;e&&e.caller&&e.caller.toString&&-1!==e.caller.toString().indexOf("getOwnPropertyNames")||n()}return t}})}}();</script></head>
+
+  <body data-new-gr-c-s-check-loaded="14.996.0" data-gr-ext-installed="">
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/index.html">Web Development &amp; Programming, Spring 2021</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li><a href="https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/index.html">Home</a></li>
+            <li><a href="https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/syllabus.html">Syllabus</a></li>
+            <li class="active"><a href="https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/schedule.html">Schedule</a></li>
+          </ul>
+        </div>
+        
+        <div id="content" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" data-read-aloud-multi-block="true">
+	        <h1 class="page-header" data-speechify-sentence="">Video Lesson 03</h1>
+	        
+	        <p data-speechify-sentence="">This semester our class will be running 1x per week, online. In order to make the most of our weekly meeting, and to prevent "Zoom Fatigue", I will be teaching the class using a "flipped classroom" model.   Here's how this model will operate in our class this semester:</p>
+	        
+	        <ul data-read-aloud-multi-block="true">
+		        <li data-speechify-sentence="">Before most classes you will be asked to watch a video lesson - the lesson for this week can be found below.</li>
+		        <li data-speechify-sentence="">After you watch all of the videos in today's lesson you will have a small task to perform - we will refer to these as "micro assignments". These "micro" assignments are fairly straightforward and short and are directly related to the content covered in the video lesson for the week.</li>
+		        <li data-speechify-sentence="">These "micro" assignments are due before our next class meeting. You cannot turn in a "micro" assignment late. We are setting up these assignments in this way so that everyone has a baseline level of knowledge of the topics being covered in the video lesson. This will allow us to make the most of our time together during our weekly course meeting.</li>
+		        <li data-speechify-sentence="">During our course meeting we will cover new topics during the first half of class. During the second half of class we will focus on working on a larger programming assignment together and in small groups.</li>
+	        </ul>
+	        
+	        <h3 data-speechify-sentence="">Working with CSS classes using JavaScript</h3>
+
+<iframe width="560" height="315" src="./micro3_files/R58LE0VO_1E.html" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>	        
+	        
+	        <h3 data-speechify-sentence="">DOM queries that return multiple elements</h3>
+
+<iframe width="560" height="315" src="./micro3_files/Qh9_vA-0eHA.html" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>	        
+	        
+	        <h3 data-speechify-sentence="">Creating &amp; adding elements programmatically</h3>
+
+<iframe width="560" height="315" src="./micro3_files/b6q1BVMsiGo.html" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>	        
+
+			<span id="micro03"></span>
+			<h3 data-speechify-sentence="">Micro Assignment #03</h3>
+			
+			<p data-speechify-sentence="">Your task is to edit the HTML document below to include some JavaScript that will make some changes to the page. Here is the code you will be working with:</p>
+			
+			<pre data-speechify-sentence="">&lt;!doctype html&gt;
+&lt;html&gt;
+
+  &lt;head&gt;
+    &lt;title&gt;Micro 03&lt;/title&gt;
+    &lt;style&gt;
+      /* you may not make any changes to the CSS rules below */
+      .blue {
+        color: blue;
+      }
+      .pink {
+        color: pink;
+      }
+      .square {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        box-sizing: border-box;
+        display: inline-block;
+        font-size: 200%;
+        margin: 0px;
+      }
+      .yellow {
+        background-color: yellow;
+      }
+      .red {
+        background-color: red;
+      }
+      .orange {
+        background-color: orange;
+      }
+      .container {
+        width: 502px;
+        height: 202px;
+        border: 1px solid black;
+        box-sizing: border-box;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;!-- you may not directly change any HTML on this page
+         you can only use JavaScript in the 'script' tag below
+         to make changes --&gt;
+    &lt;div id="box1"&gt;
+      &lt;div class="square yellow"&gt;1&lt;/div&gt;
+      &lt;div class="square yellow"&gt;3&lt;/div&gt;
+      &lt;div class="square yellow"&gt;4&lt;/div&gt;
+      &lt;div class="square yellow"&gt;2&lt;/div&gt;
+      &lt;div class="square yellow"&gt;5&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id="box2"&gt;
+      &lt;div class="square red"&gt;6&lt;/div&gt;
+      &lt;div class="square red"&gt;9&lt;/div&gt;
+      &lt;div class="square red"&gt;8&lt;/div&gt;
+      &lt;div class="square red"&gt;10&lt;/div&gt;
+      &lt;div class="square red"&gt;7&lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div id="box4" class="container"&gt;&lt;/div&gt;
+    &lt;div id="box5" class="container"&gt;&lt;/div&gt;
+
+    &lt;script&gt;
+
+      // Task #1: change all yellow squares to red square,
+      //          and all red square to yellow squares. you must use the
+      //          provided classes for this (you cannot use inline styles)
+      //          HINT: use 'querySelectorAll' instead of 'getElementsByClassName' here
+      //          this was not mentioned in the video, but 'querySelectorAll' will return
+      //          an array of elements that represents a 'snapshot' in time of all elements
+      //          that are members of a class, whereas 'getElementsByClassName' will return an
+      //          'auto-updating' object that will change whenever the class membership
+      //          of an element changes.
+
+      // Task #2: change all squares that have even numbers in them
+      //          so that they use the 'blue' class, and all odd numbered
+      //          squares so that they use the 'pink' class
+
+
+      // Task #3: add 10 divs with classes of 'orange' and 'square'
+      //          to the div with an id of 'box4'
+
+
+      // Task #4: add 10 divs with a class of 'square' and a RANDOMLY
+      //          selected class of orange, red or yellow to the div
+      //          with an id of box5
+
+    &lt;/script&gt;
+
+  &lt;/body&gt;
+
+&lt;/html&gt;
+
+			</pre>
+			
+			<p data-speechify-sentence="">Your finished product should look like the following image:</p>
+			
+			<div class="imageholder">
+				<img src="./micro3_files/micro_03.png">
+			</div>
+			
+			<p data-speechify-sentence="">Here are some hints to get you started:</p>
+			
+			<ul data-read-aloud-multi-block="true">
+				<li data-speechify-sentence="">You can ONLY make changes to the script tag - no changes to HTML, CSS or JavaScript outside of this tag is allowed.</li>
+				<li data-speechify-sentence="">You will be using a number of new DOM methods that are discussed in the videos above.</li>
+				<li data-speechify-sentence="">You cannot "hard-code" any values using inline styles - if the program says to add a class to an element you cannot use <code>element.style</code> to simulate this behavior.</li>
+			</ul>
+			
+			<p data-speechify-sentence="">When you are finished please upload a copy of this file to your i6 website using the process described in <a href="https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/assignment01.php">Assignment 01</a>.  Name your file <code>micro_assignment_03.html</code> and ensure that it is accessible from within your <code>webdev</code> folder.  You will also want to submit a link to your work on <a href="https://newclasses.nyu.edu/" target="_blank">NYU Classes</a> under the 'Assignments' tool.  You will want to include this project as a link on your homepage (also described in <a href="https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/assignment01.php">Assignment 01</a>)</p>
+	 	
+						
+				
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./micro3_files/jquery.min.js"></script>
+    <script src="./micro3_files/bootstrap.min.js"></script>
+    <script src="./micro3_files/docs.min.js"></script>
+  
+
+<div id="speechify-selection-button-container">
+    <button class="always-inactive speechify-button plyr__control" data-loading="false" data-plyr="play">
+      
+<svg class="outline-play-icon" width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M7.125 4.67029C7.29167 4.76651 7.29167 5.00707 7.125 5.1033L1.29481 8.46936C1.12814 8.56559 0.919811 8.4453 0.919811 8.25285L0.919811 1.52073C0.919811 1.32828 1.12814 1.208 1.29481 1.30422L7.125 4.67029Z" fill="white" stroke="#4856fd" stroke-width="1.5"></path>
+</svg>
+
+      
+<svg class="icon--not-pressed" role="presentation" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" viewBox="0 0 26 26">
+  <path fill="#FFF" fill-rule="evenodd" d="M18.594 14.789l-10.7 5.35c-.988.493-2.189.093-2.683-.895C5.072 18.966 5 18.66 5 18.35V7.65c0-1.104.895-2 2-2 .31 0 .617.072.894.211l10.7 5.35c.988.494 1.388 1.695.894 2.683-.193.387-.507.701-.894.895z"></path>
+</svg>
+
+    </button>
+  </div><div id="speechify-paragraph-hover-button-container"></div></body></html>
