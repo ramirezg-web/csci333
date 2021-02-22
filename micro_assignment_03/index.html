@@ -1,0 +1,230 @@
+<!doctype html>
+<html>
+
+  <head>
+    <title>Micro 03</title>
+    <style>
+      /* you may not make any changes to the CSS rules below */
+      .blue {
+        color: blue;
+      }
+      .pink {
+        color: pink;
+      }
+      .square {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        box-sizing: border-box;
+        display: inline-block;
+        font-size: 200%;
+        margin: 0px;
+      }
+      .yellow {
+        background-color: yellow;
+      }
+      .red {
+        background-color: red;
+      }
+      .orange {
+        background-color: orange;
+      }
+      .container {
+        width: 502px;
+        height: 202px;
+        border: 1px solid black;
+        box-sizing: border-box;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- you may not directly change any HTML on this page
+         you can only use JavaScript in the 'script' tag below
+         to make changes -->
+    <div id="box1">
+      <div class="square yellow">1</div>
+      <div class="square yellow">3</div>
+      <div class="square yellow">4</div>
+      <div class="square yellow">2</div>
+      <div class="square yellow">5</div>
+    </div>
+    <div id="box2">
+      <div class="square red">6</div>
+      <div class="square red">9</div>
+      <div class="square red">8</div>
+      <div class="square red">10</div>
+      <div class="square red">7</div>
+    </div>
+
+    <div id="box4" class="container"></div>
+    <div id="box5" class="container"></div>
+
+    <script>
+      // Task #1: change all yellow squares to red square,
+      //          and all red square to yellow squares. you must use the
+      //          provided classes for this (you cannot use inline styles)
+      //          HINT: use 'querySelectorAll' instead of 'getElementsByClassName' here
+      //          this was not mentioned in the video, but 'querySelectorAll' will return
+      //          an array of elements that represents a 'snapshot' in time of all elements
+      //          that are members of a class, whereas 'getElementsByClassName' will return an
+      //          'auto-updating' object that will change whenever the class membership
+      //          of an element changes.
+      let bird=document.querySelectorAll('.yellow')
+      console.log(bird)
+        for(let i=0; i < bird.length; i++){
+        bird[i].style.backgroundColor="red"
+        }
+        let red=document.querySelectorAll('.red')
+        console.log(red)
+
+          for(let i=0; i < red.length; i++){
+          red[i].style.backgroundColor="yellow"
+            }
+
+      // Task #2: change all squares that have even numbers in them
+      //          so that they use the 'blue' class, and all odd numbered
+      //          squares so that they use the 'pink' class
+
+      var allSquares = Array.from(document.getElementsByClassName('square'));
+var d2;
+
+allSquares.forEach(function(item) {
+        d2 = item.classList;
+        if(item.innerText % 2 === 0) {
+                d2.add("blue");
+        } else {
+                d2.add("pink");
+        }
+
+});
+//       var d2=document.querySelectorAll('.square')
+//       console.log(d2)
+//       for(let i=0; i < d2.length; i++){
+//       function printOdd(i){
+//       for (let i=1; i<d2.length; i++) {
+//     if(i % 2 !== 0) {
+//       d2.classList.add("blue")
+//       console.log(i);
+//     }
+//   }
+// }
+// }
+//       for(let i=0; i < d2.length; i++){
+//       function isEven(i) {
+// 	       if (i%2 == 0)
+//          d2.classList.add('blue')
+// 	        else
+//           d2.classList.add('pink')
+// }
+// }
+      // for(let i=0; i < d2.length; i++){
+      //   if (d2[i]%2===0){
+      //     console.log(d2[i])
+      //     d2.classList.add("blue")
+      //   }
+
+// function getEven (){
+//   var arr=d2.length;
+//   for (var i =0; i <arr.length; i++){
+//     if (arr[i]%2===0){
+//       d2.classList.add('blue')
+
+
+
+// getEven();
+//  var d2=document.querySelectorAll('.square')
+//  for(let i=0; i < d2.length; i++){
+//  let number=d2[i]
+//  console.log(number)
+//
+//  var isEven=function(number){
+//    if(number%2===0){
+//      d2.classList.add('blue')
+//      // return true;
+//    }
+//    else{
+//      d2.classList.add('pink')
+//    }
+//  }
+//  isEven(number)
+// }
+//  console.log(d2)
+//  let i==d2.length;
+//  for (let i%2==0; i<d2.length;i++){
+//    console.log(d2)
+// }
+// let array =[d2.length]
+// array.each{}
+
+
+      // Task #3: add 10 divs with classes of 'orange' and 'square'
+      //          to the div with an id of 'box4'
+  let box4=document.getElementById('box4')
+  for (let i=0; i<10; i++){
+    let tempdiv= document.createElement('div')
+    tempdiv.classList.add("orange")
+     tempdiv.classList.add("square")
+     box4.appendChild(tempdiv)
+  }
+
+
+      // Task #4: add 10 divs with a class of 'square' and a RANDOMLY
+      //          selected class of orange, red or yellow to the div
+      //          with an id of box5
+      var random;
+    var colors = ['orange', 'red', 'yellow'];
+    var i;
+    // Iterating a loop from 1 to 10
+    for(i=1; i<=10; i++) {
+            // Generating a random number between 1 to 3
+            random = Math.floor((Math.random() * 3) + 1);
+            // Create new div element
+            var tempdiv = document.createElement('div');
+            // Adding classes square and random color based on randomColorIndex to the newly creted div element
+            tempdiv.className = 'square ' + colors[random - 1];
+            // Adding newly created div element as a child to box5Container element
+            box5.appendChild(tempdiv);
+    }
+      // let box5=document.getElementById('box5')
+      // for (let i=0; i<10; i++){
+      //   let tempdiv= document.createElement('div')
+      //    tempdiv.classList.add("square")
+      //    box5.appendChild(tempdiv)
+      // }
+      //
+      // var min = 1;
+      // var max = 10;
+      // //Number of numbers to extract
+      // var stop = 1;
+      //
+      // var numbers = [];
+      //
+      // for (let i = 0; i < stop; i++) {
+      //   var n =  Math.floor(Math.random() * max) + min;
+      //   var check = numbers.includes(n);
+      //   if(check === false) {
+      //     numbers.push(n);
+      //   } else {
+      //     while(check === true){
+      //       n = Math.floor(Math.random() * max) + min;
+      //       check = numbers.includes(n);
+      //         if(check === false){
+      //           numbers.push(n);
+      //         }
+      //      }
+      //   }
+      // }
+      // num1();
+      // function num1(1) {
+      //   // document.getElementById("numbers").innerHTML = "Your three lucky numbers today are";
+      //   document.getElementById("box5").innerHTML = "Your three lucky numbers today are " +numbers.join(", ");
+      // }
+
+    </script>
+
+  </body>
+
+</html>

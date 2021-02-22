@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+
+    <meta charset="utf-8">
+    <title>Gotta Catch Them All</title>
+
+    <style media="screen">
+
+        #forest{
+          background-image: url('images/environment_forestbackground.png');
+          width:800px;
+          height:600px;
+          position:relative;
+          float:left;
+        }
+        #grass1{
+          position:absolute;
+          left:0px;
+          bottom:0px;
+        }
+        #grass2{
+          position:absolute;
+          left:270px;
+          bottom:0px;
+        }
+        #grass3{
+          position:absolute;
+          left:540px;
+          bottom:0px;
+        }
+        .grass:hover{
+          background-color:yellow;
+          opacity:0.5;
+        }
+#playagain{
+  display:none;
+}
+
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="forest">
+        <img class="grass" id="grass1" src="images/grass.png" alt="">
+        <img class="grass" id="grass2" src="images/grass.png" alt="">
+        <img class="grass"  id="grass3"  src="images/grass.png" alt="">
+
+      </div>
+      <div id="game">
+        <h1>Gotta Catch 'em All!'</h1>
+        <p>Instructions go here</p>
+        <p>your progress so far...</p>
+        <p id='output_pokeballs'>Pokeballs left :5</p>
+        <p id='poke_caught'>Pokemon caught:0</p>
+        <button id="playagain"> Play Again </button>
+      </div>
+      <div id="results">
+
+      </div>
+
+    </div>
+
+    <script>
+    // need to keep track of how many pokeballs the user has
+    //pokemon they have caught
+
+    let pokeballs=5;
+    let pokemonCaught=0;
+    //get DOM reference to desired HTML elements
+    let g1=  document.getElementById("grass1");
+
+    let g2=document.getElementById("grass2");
+    let g3=document.getElementById("grass3");
+
+    //output divs
+
+    let output_pokeballs=document.getElementById('output_pokeballs');
+    let poke_caught=document.getElementById('poke_caught');
+    let playAgain=document.getElementById('playagain');
+    g1.onclick=function(){
+      //it costs 1 pokeball to do this
+      pokeballs-=1;
+
+      let chance=parseInt(Math.random()*3);
+      if (chance==0){
+        //this is a pokemon
+        g1.src='images/pikachu.png';
+        pokemonCaught+=1;
+      }
+      else if (chance==1){
+        //this is the extra pokeballs!
+        g1.src='images/pokeballs.png';
+        pokeballs+=2;
+
+      }
+      else{
+        //there/s nothing here
+        g1.src='';
+      }
+      //overwrite output div to contain new values of variables
+      output_pokeballs.innerHTML="Pokeballs left:"+pokeballs;
+      poke_caught.innerHTML="Pokemon caught:"+pokemonCaught;
+      playAgain.style.display='block';
+    }
+    //wire event listener to respond when user clicks on grass 1
+playAgain.onclick=function(){
+  g1.src='images/grass.png'
+  g2.src='images/grass.png'
+  g3.src='images/grass.png'
+  playAgain.style.display="none";
+
+}
+
+
+
+
+
+
+    </script>
+
+  </body>
+</html>
