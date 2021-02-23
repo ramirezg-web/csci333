@@ -183,9 +183,7 @@ allSquares.forEach(function(item) {
             random = Math.floor((Math.random() * 3) + 1);
             // Create new div element
             var tempdiv = document.createElement('div');
-            // Adding classes square and random color based on randomColorIndex to the newly creted div element
             tempdiv.className = 'square ' + colors[random - 1];
-            // Adding newly created div element as a child to box5Container element
             box5.appendChild(tempdiv);
     }
       // let box5=document.getElementById('box5')
