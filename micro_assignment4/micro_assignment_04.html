@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <style media="screen">
+  /* .box{
+    width:100px;
+    font-family:fantasy;
+    height:40px;
+    border:solid 1px black;
+  } */
+  .container{
+    float: left;
+    /* flex-direction: row;
+    display: inline; */
+
+
+    /* display:inline-block; */
+  }
+  #number1,#number2{
+    /* display: flex;
+    flex-direction: row; */
+    text-align:center;
+    width:100px;
+    height:100px;
+  }
+
+
+    /* display: flex;
+    flex-direction: row; */
+  }
+  </style>
+  <body>
+    <h1>Micro 04</h1>
+
+    <div class="container">
+
+    <input type="number" id="number1" style="display:inline-block;"name="" value="">
+
+
+
+      <select id="choice" style="display:inline-block;"class="" name="">
+        <option value="p">+</option>
+        <option value="s">-</option>
+        <option value="d">/</option>
+        <option value="m">*</option>
+
+
+      </select>
+
+    <input type="number" id="number2" name="" value="">
+
+
+    <button id="process" type="button" name="button"> =</button>
+    <div id="results" class="">
+
+    </div>
+    </div>
+  </div>
+
+      <script type="text/javascript">
+      let n1=document.getElementById('number1')
+      let n2=document.getElementById('number2')
+      let option=document.getElementById('choice')
+      let btn=document.getElementById('process')
+      let r=document.getElementById('results')
+
+      btn.onclick=function(event){
+        console.log(number1.value)
+        console.log(number2.value)
+        console.log(choice.value)
+        if (choice.value=="p"){
+          console.log(parseInt(number1.value)+parseInt(number2.value))
+          a=parseInt(number1.value)+parseInt(number2.value)
+
+          results.innerHTML=a
+        }
+        else if (choice.value=="s"){
+          console.log(parseInt(number1.value)-parseInt(number2.value))
+          b=parseInt(number1.value)-parseInt(number2.value)
+
+          results.innerHTML=b
+        }
+        else if (choice.value=="m"){
+          console.log(number1.value*number2.value)
+          c=parseInt(number1.value)*parseInt(number2.value)
+
+          results.innerHTML=c
+        }
+        else if (choice.value=="d"){
+          console.log(number1.value/number2.value)
+          d=parseInt(number1.value)/parseInt(number2.value)
+
+          results.innerHTML=d
+        }
+      }
+      </script>
+  </body>
+</html>
