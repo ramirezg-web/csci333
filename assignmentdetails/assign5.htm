@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/assignment05.php -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>CSCI-UA.0061 : Spring 2021</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./assign5_files/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./assign5_files/style.css" rel="stylesheet">
+    
+    <style type="text/css">
+	
+		.imageholder {
+			border: 1px solid #eee;
+			padding: 25px;
+			width: 600px;
+			margin-bottom: 50px;
+		}    
+		
+		.imageholder img {
+			width: 500px;
+		}
+	    
+	</style>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  <style id="holderjs-style" type="text/css"></style><script data-dapp-detection="">!function(){let e=!1;function n(){if(!e){const n=document.createElement("meta");n.name="dapp-detected",document.head.appendChild(n),e=!0}}if(window.hasOwnProperty("ethereum")){if(window.__disableDappDetectionInsertion=!0,void 0===window.ethereum)return;n()}else{var t=window.ethereum;Object.defineProperty(window,"ethereum",{configurable:!0,enumerable:!1,set:function(e){window.__disableDappDetectionInsertion||n(),t=e},get:function(){if(!window.__disableDappDetectionInsertion){const e=arguments.callee;e&&e.caller&&e.caller.toString&&-1!==e.caller.toString().indexOf("getOwnPropertyNames")||n()}return t}})}}();</script></head>
+
+  <body data-new-gr-c-s-check-loaded="14.997.0" data-gr-ext-installed="">
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/index.html">Web Development &amp; Programming, Spring 2021</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li><a href="https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/index.html">Home</a></li>
+            <li><a href="https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/syllabus.html">Syllabus</a></li>
+            <li class="active"><a href="https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/schedule.html">Schedule</a></li>
+          </ul>
+        </div>
+        
+        <div id="content" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" data-read-aloud-multi-block="true">
+	        <h1 class="page-header" data-speechify-sentence="">Assignment 05: Seasonal To-Do List</h1>
+
+		  	<div class="alert alert-info" data-speechify-sentence="">Note that this is an assignment that we will work on over the next two class periods.  During the first week we will focus on the basic features of the daily log system, and next week you will be adding additional features.  Please try and get the basic system done or nearly done before our second class meeting so you can attempt the more advanced features with the rest of the class.</div>
+		  						
+		  	<p data-speechify-sentence="">For this assignment you will be creating an online system that lets users keep track of seasonal activities.  Here is a video example of how the this program should work (including the 'advanced' features described below).  Note that you may redesign your system to use your own content, colors and layout, but the overall logic should be the same.</p>
+
+<iframe width="560" height="315" src="./assign5_files/thHhzRhYgy4.html" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+			<h3 data-speechify-sentence="">Phase 1</h3>
+
+			<p data-speechify-sentence="">For full credit for phase 1 you should ensure that your program should do the following.  <a href="https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/images/assignment05/assignment05_images.zip" target="_blank">Note that you can download all of the graphics used in this project here</a>.</p>
+		  	
+		  	<ul data-read-aloud-multi-block="true">
+			  	<li data-read-aloud-multi-block="true">Layout
+			  		<ul data-read-aloud-multi-block="true">
+				  		<li data-speechify-sentence="">Some kind of header to introduce your page</li>
+				  		<li data-speechify-sentence="">Four tabs that allow the user to select from four different seasons.  The first tab / link should be visually distinguished in some way to show that it is currently selected.</li>
+				  		<li data-speechify-sentence="">A content window associated with each tab. The two tabs that are not currently activated should have their content windows hidden when the page loads. Each tab should contain a description of the activity type, a text box and a button.</li>
+				  		<li data-speechify-sentence="">A "corkboard" that will contain all of the activities that have been added to the log.</li>
+				  		<li data-speechify-sentence="">A drop-down menu that will allow the user to "filter" by season.</li>
+			  		</ul>
+			  	</li>
+			  	<li data-read-aloud-multi-block="true">Tabbing Logic
+			  		<ul data-read-aloud-multi-block="true">
+				  		<li data-speechify-sentence="">Clicking on a tab should change its design in order to show it's 'active' status.</li>
+				  		<li data-speechify-sentence="">Clicking on a tab should display the corresponding content window below the tab. The other content windows should hide themselves.</li>
+			  		</ul>
+			  	</li>
+			  	<li data-read-aloud-multi-block="true">Entry Logic
+			  		<ul data-read-aloud-multi-block="true">
+				  		<li data-speechify-sentence="">A user should be able to type into a seasonal text box and click the 'Add Note' button.  When this happens a new "Sticky Note" should appear in the activity panel.  Each note should be visually distinguishable (i.e. 'winter' entries will have a different background color than 'summer' entries).  Hint: use classes to do this!</li>
+				  		<li data-speechify-sentence="">If the user does not type a value into the text box and clicks the button the system will detect this and prevent an empty entry from being added to the list.</li>
+				  		<li data-speechify-sentence="">Entries should be added to the activity panel in chronological order, with the latest entries showing up on the right side of the panel.</li>
+				  		<li data-speechify-sentence="">When you hover over a note a button should appear at the top right side of the entry.  This button can be used to delete that particular entry (hint: use the 'onmouseover' and 'onmouseout' events and the 'event' object to determine which entry is being interacted with)</li> 
+				  		<li data-speechify-sentence="">The 'Filter' drop down menu should let the user view all entries of a particular type, or view all entries regardless of type.  Hint #1: you will need to detect when the drop down menu has changed and respond with a function - the 'onchange' event could be useful here.  Hint #2: use classes or dataset properties to keep track of different entry types.</li> 
+			  		</ul>
+			  	</li>
+		  	</ul>
+		  	
+		  	<h3 data-speechify-sentence="">Phase 2</h3>
+		  	
+		  	<p data-speechify-sentence="">Select <u>two</u> of the following <u>four</u> features to add to your program.  You can complete 3 or 4 features for some extra credit. </p>
+		  	
+		  	<ul data-read-aloud-multi-block="true">
+			  	<li data-speechify-sentence="">Completed Event: add an additional button to each note to indicate that an event is 'complete' - i.e. if this was a 'to-do' list clicking on this button would cause the item to be 'checked off' as complete.  Completed events should have some kind of visual indicator attached to them (a checkbox?).  Also allow completed events to switch back to being 'un-completed'.  The filtering system should also be updated to filter completed / un-completed items.</li>
+			  	<li data-speechify-sentence="">Edit events: add an additional button to each note that allows the user to edit any event.  The edit button should display some interface that lets the user change the text of the event as well as the category of the event.  This can be a pop-up interface (modal box) or an in-line editing interface as is showin in the video - your choice.</li>
+			  	<li data-speechify-sentence="">Reorder events: add two additional buttons to your notes which will allow them to move left and right in the list.  Clicking on the 'left' indicator will move the element left by one position, and clicking on the 'right' indicator will move the element right by one position.  If an element is already at the beginning of the list it should not be given an 'left' indicator, and likewise an entry at the end of the list should not be given a 'right' indicator (hint: hide the indicator if it is moved into the first / last position).</li>
+			  	<li data-speechify-sentence="">Delete Multiple Events (not shown in the video): delete multiple notes at the same time based on the current filter choice.  For example, if the user is filtering to show only 'summer' then all summer notes will be deleted.  If the filter is showing all entries then every entry should be deleted.</li>
+
+		  	 </ul>
+		  	 
+		 	<p data-speechify-sentence="">Thoroughly test your work and make sure that it meets the requirements set forth above.  When you are finished with both Phase 1 and Phase 2, post your project to the i6 server and link it from your main menu page.  We should be able to visit your 'webdev' folder and click on the link to the fourth assignment and visit your page.  Also create a ZIP archive of your work and submit it to NYU classes under the 'Assignment 05' category.</p>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./assign5_files/jquery.min.js"></script>
+    <script src="./assign5_files/bootstrap.min.js"></script>
+    <script src="./assign5_files/docs.min.js"></script>
+  
+
+<div id="speechify-selection-button-container">
+    <button class="always-inactive speechify-button plyr__control" data-loading="false" data-plyr="play">
+      
+<svg class="outline-play-icon" width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M7.125 4.67029C7.29167 4.76651 7.29167 5.00707 7.125 5.1033L1.29481 8.46936C1.12814 8.56559 0.919811 8.4453 0.919811 8.25285L0.919811 1.52073C0.919811 1.32828 1.12814 1.208 1.29481 1.30422L7.125 4.67029Z" fill="white" stroke="#4856fd" stroke-width="1.5"></path>
+</svg>
+
+      
+<svg class="icon--not-pressed" role="presentation" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" viewBox="0 0 26 26">
+  <path fill="#FFF" fill-rule="evenodd" d="M18.594 14.789l-10.7 5.35c-.988.493-2.189.093-2.683-.895C5.072 18.966 5 18.66 5 18.35V7.65c0-1.104.895-2 2-2 .31 0 .617.072.894.211l10.7 5.35c.988.494 1.388 1.695.894 2.683-.193.387-.507.701-.894.895z"></path>
+</svg>
+
+    </button>
+  </div><div id="speechify-paragraph-hover-button-container"></div></body></html>

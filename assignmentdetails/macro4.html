@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/assignment04.php -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>CSCI-UA.0061 : Spring 2021</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./macro4_files/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./macro4_files/style.css" rel="stylesheet">
+    
+    <style type="text/css">
+	
+		.imageholder {
+			border: 1px solid #eee;
+			padding: 25px;
+			width: 600px;
+			margin-bottom: 50px;
+		}    
+		
+		.imageholder img {
+			width: 500px;
+		}
+		
+		.challengeContent {
+			display: none;
+			padding-top: 0px;
+		}
+		
+		.challengeContent span {
+			margin-left: 10px;
+		}
+		
+		.challengeButton {
+			
+		}
+		
+		.challengeButtonActive {
+			background-color: #fc0;
+			color: #069;
+		}
+		
+		.challengeButtonActive:focus {
+			background-color: #fc0;
+			color: #069;
+		}
+		
+		#finalchallenge {
+			display: none;
+		}
+	    
+	</style>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  <style></style><style id="holderjs-style" type="text/css"></style><script async="" src="./macro4_files/adblocker-chromeglobalinjectjs.js"></script></head>
+
+  <body data-new-gr-c-s-check-loaded="14.997.0" data-gr-ext-installed="">
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/index.html">Web Development &amp; Programming, Spring 2021</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li><a href="https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/index.html">Home</a></li>
+            <li><a href="https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/syllabus.html">Syllabus</a></li>
+            <li class="active"><a href="https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/schedule.html">Schedule</a></li>
+          </ul>
+        </div>
+        
+        <div id="content" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" data-read-aloud-multi-block="true">
+	        <h1 class="page-header" data-speechify-sentence="">Macro Assignment #04: Harry Potter and the Chamber of the DOM!</h1>
+					          	
+          	<div><img src="./macro4_files/chamber_of_dom_header.png" style="width: 100%; margin-bottom: 15px;"></div>
+          	
+          	<p data-speechify-sentence="">The wizards at Hogwarts need your help!  Voldemort has apparently been taking a web development class and is creating havoc by casting a wide array of dangerous JavaScript spells!</p>
+          	
+          	<p data-speechify-sentence="">Your mission is to work through four (3 'starter' challenges and a final one.)  Each challenge is based on a single HTML file.  Read through the comments in the HTML file to determine your task, and then solve it using your HTML, CSS and JavaScript skills!  When you solve a challenge you can come back here and input any magical results that appear by using the buttons below.  Finishing a challenge will reward you with a password.  If you collect all three passwords you can open up the final challenge. <a href="https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/sourcecode/08_harrypotter/assignment04-harry_potter_challenges.zip" target="_blank">The source code for the first three challenges can be downloaded here</a>.</p>
+          	
+          	<p data-speechify-sentence="">When you are finished you should create a new webpage called 'assignment04.html' in your webdev folder.  This page should link to the four challenges you worked on here.  Also zip up your work and submit it to NYU Classes, as usual.</p>
+          	
+          	<button class="btn btn-info challengeButton" data-target="challenge3" style="">Challenge #1</button>
+          	<button class="btn btn-info challengeButton" data-target="challenge4" style="">Challenge #2</button>
+          	<button class="btn btn-info challengeButton" data-target="challenge5" style="">Challenge #3</button>
+          	<button class="btn btn-info challengeButton" data-target="challenge6" style="">Final Challenge</button>
+
+		  	<div id="challenge1" class="challengeContent">
+			  	<h3>Voldemort Cleanup!</h3>
+			  	<p>Voldemort has done it again, and has enchanted yet another webpage!  Solve the challenge described in the file 01.html.  To check your work type your answer into the blank below.  When you successfully cast the spell you will be given a password to prove that you have mastered this challenge!</p>
+			  	
+			  	<form>
+				  	What image appears? (one word): <input type="text" id="challenge1_spell1"><span></span><br>
+				  	<button class="btn btn-info" id="challenge1_check">Check!</button><span></span>
+			  	</form>
+		  	</div>
+		  	
+		  	<div id="challenge2" class="challengeContent">
+			  	<h3>Voldemort Cleanup Part 2!</h3>
+			  	<p>Voldemort is stepping up his attacks and has now started attacking JavaScript code!  Solve the challenge described in the file 02.html.  To check your work type your answer into the blank below.  When you successfully cast the spell you will be given a password to prove that you have mastered this challenge!</p>
+			  	
+			  	<form>
+				  	What image appears? (one word): <input type="text" id="challenge2_spell1"><span></span><br>
+				  	<button class="btn btn-info" id="challenge2_check">Check!</button><span></span>
+			  	</form>
+		  	</div>
+
+		  	<div id="challenge3" class="challengeContent">
+			  	<h3>Pixel Spells!</h3>
+			  	<p>Cast a series of spells to cause the names of familiar Harry Potter words to appear.  Instructions on how to get started can be found in the file 01.html.  To check your work type your answers into the blanks below.  When you successfully cast all of the spells you will be given a password to prove that you have mastered this challenge!</p>
+			  	
+			  	<form>
+				  	Spell #1: <input type="text" id="challenge3_spell1"><span></span><br>
+				  	Spell #2: <input type="text" id="challenge3_spell2"><span></span><br>
+				  	Spell #3: <input type="text" id="challenge3_spell3"><span></span><br>
+				  	<button class="btn btn-info" id="challenge3_check">Check!</button><span></span>
+			  	</form>
+		  	</div>
+
+		  	<div id="challenge4" class="challengeContent">
+			  	<h3>Wizard Summoning!</h3>
+			  	<p>Dumbledore needs your help to summon a wizard to Hogwarts!  Solve the challenge described in the file 02.html.  To check your work type your answer into the blank below.  When you successfully cast the spell you will be given a password to prove that you have mastered this challenge!</p>
+			  	
+			  	<form>
+				  	Wizard: <input type="text" id="challenge4_spell1"><span></span><br>
+				  	<button class="btn btn-info" id="challenge4_check">Check!</button><span></span>
+			  	</form>
+		  	</div>
+
+		  	<div id="challenge5" class="challengeContent">
+			  	<h3>Locked Potions Cabinet!</h3>
+			  	<p>Professor Snape has locked his potions cabinet and he can't get it open!  Solve the challenge described in the file 03.html.  To check your work type what was found in the cabinet into the blank below.  When you successfully open the cabinet you will be given a password to prove that you have mastered this challenge!</p>
+			  	
+			  	<form>
+				  	What was found: <input type="text" id="challenge5_spell1"><span></span><br>
+				  	<button class="btn btn-info" id="challenge5_check">Check!</button><span></span>
+			  	</form>
+		  	</div>
+
+
+		  	<div id="challenge6" class="challengeContent">
+			  	<h3>Final Challenge!</h3>
+			  	<p>Type in the three passwords you have obtained throughout your journey.  You will then be presented with the final challenge!</p>
+			  	
+			  	<form>
+				  	Challenge #1: <input type="text" id="challenge6_spell3"><span></span><br>
+				  	Challenge #2: <input type="text" id="challenge6_spell4"><span></span><br>
+				  	Challenge #3: <input type="text" id="challenge6_spell5"><span></span><br>
+				  	<button class="btn btn-info" id="challenge6_check">Check!</button><span></span>
+			  	</form>
+		  	</div>
+
+
+		  	<div id="finalchallenge">
+			  	
+			  	<h3>[unlocked] The Final Challenge!</h3>
+			  	
+			  	<p>For this final challenge you will be building a website that will let users create their own maps of Hogwarts. In video game design we would call a project like this a "level builder" since it can be used to create new environments for players to experience.  The core of this system is based on a series of small graphics (32px by 32px) which can be "tiled" next to one another to form a seamless backdrop.  Here's a video that shows the desired features of your project:</p>
+			  	
+			  	<iframe width="560" height="315" src="./macro4_files/YDRryOaWoG4.html" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+			  	
+			  	<p><a href="https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/sourcecode/08_harrypotter/assignment04_finalchallenge_template.zip" target="_blank">To get started, download this starter template, which contains all of the images that you will need for this project.</a></p>
+			  	
+			  	<p>Here's what you will be working on:</p>
+			  	
+			  	<ul>
+				  	<li>Create a graphical layout that contains a two columns - one on the left and one on the right</li>
+				  	<li>The left column should contain a block that is 320px by 320px to hold the user's map.  Each individual image tile is 32px by 32px.</li>
+				  	<li>The right column should contain all of the images included in the downloadable package.  Hint: the 'image_array.js' file has an array that contains all of these filenames already!</li>
+				  	<li>Whenever you click on an image in the right column the following should occur:
+				  		<ul>
+					  		<li>That image should gain some sort of visual class to show that it is selected.</li>
+					  		<li>Some variable should be updated to hold the 'src' property of that image so that we can use it to "draw" the map on the left side of the screen</li>
+					  		<li>Note that under no circumstances should more than one image on the right have the "selected" indicator attached to it.</li>
+				  		</ul>
+				  	</li>
+				  	<li>The left column should be filled with 100 divs that are 32px by 32px each.  Make these divs float to line up next to one another.</li>
+				  	<li>Set up each div so that when you hover over them they gain a temporary indicator showing that they are being selected (hint: use a hover state in CSS)</li>
+				  	<li>Each div should listen for a mouse click.  If it is clicked it should use whichever image was selected in the right column and set that as its 'backgroundImage' property.</li>
+			  	</ul>
+		  	</div>
+
+        </div>
+      </div>
+    </div>
+    
+    <script src="./macro4_files/md5.js"></script>
+    <script type="text/javascript">
+
+	    var allChallengeButtons = document.querySelectorAll('.challengeButton');
+	    for (var i = 0; i < allChallengeButtons.length; i++) {
+		    allChallengeButtons[i].onclick = function() {
+			    var acb = document.querySelectorAll('.challengeButtonActive');
+			    for (var j = 0; j < acb.length; j++) {
+				    acb[j].classList.remove('challengeButtonActive');
+			    }			    
+			    this.classList.add('challengeButtonActive');
+			    
+			    var acc = document.querySelectorAll('.challengeContent');
+			    for (j = 0; j < acc.length; j++) {
+				    acc[j].style.display = 'none';
+			    }
+			    
+			    document.getElementById( this.dataset.target ).style.display = 'block';
+		    }
+	    }
+	    
+	    document.getElementById('challenge3_check').onclick = function(event) {
+		    event.preventDefault();
+		    var a1 = document.getElementById('challenge3_spell1');
+		    var a2 = document.getElementById('challenge3_spell2');
+		    var a3 = document.getElementById('challenge3_spell3');
+		    
+		    var points = 0;
+		    if (md5(a1.value.toLowerCase()) === 'e1e60d5e89d03eba14689f4c96166e17') {
+			    a1.nextElementSibling.innerHTML = 'Correct!';
+			    points++;
+		    }		    
+		    else {
+			    a1.nextElementSibling.innerHTML = 'Wrong!';
+		    }
+
+		    if (md5(a2.value.toLowerCase()) === '856936b417f82c06139c74fa73b1abbe') {
+			    a2.nextElementSibling.innerHTML = 'Correct!';
+			    points++;
+		    }		    
+		    else {
+			    a2.nextElementSibling.innerHTML = 'Wrong!';
+		    }
+
+		    if (md5(a3.value.toLowerCase()) === 'f33806b781e02e176fe43b33c84d85ec') {
+			    a3.nextElementSibling.innerHTML = 'Correct!';
+			    points++;
+		    }		    
+		    else {
+			    a3.nextElementSibling.innerHTML = 'Wrong!';
+		    }
+
+		    if (points == 3) {
+			    document.getElementById('challenge3_check').nextElementSibling.innerHTML = 'pw:Triwizard';
+		    }
+		    else {
+			    document.getElementById('challenge3_check').nextElementSibling.innerHTML = '';
+		    }		    
+	    }
+
+
+	    document.getElementById('challenge4_check').onclick = function(event) {
+		    event.preventDefault();
+		    var a1 = document.getElementById('challenge4_spell1');
+		    
+		    var points = 0;
+		    if (md5(a1.value.toLowerCase()) === '45798f269709550d6f6e1d2cf4b7d485') {
+			    a1.nextElementSibling.innerHTML = 'Correct!';
+			    points++;
+		    }		    
+		    else {
+			    a1.nextElementSibling.innerHTML = 'Wrong!';
+		    }
+
+		    if (points == 1) {
+			    document.getElementById('challenge4_check').nextElementSibling.innerHTML = 'pw:Butterbeer';
+		    }
+		    else {
+			    document.getElementById('challenge4_check').nextElementSibling.innerHTML = '';
+		    }		    
+	    }
+
+	    document.getElementById('challenge5_check').onclick = function(event) {
+		    event.preventDefault();
+		    var a1 = document.getElementById('challenge5_spell1');
+		    
+		    var points = 0;
+		    if (md5(a1.value.toLowerCase()) === '5f4dc08ede27b71ff1d50d2aa08cc27a') {
+			    a1.nextElementSibling.innerHTML = 'Correct!';
+			    points++;
+		    }		    
+		    else {
+			    a1.nextElementSibling.innerHTML = 'Wrong!';
+		    }
+
+		    if (points == 1) {
+			    document.getElementById('challenge5_check').nextElementSibling.innerHTML = 'pw:Longbottom';
+		    }
+		    else {
+			    document.getElementById('challenge5_check').nextElementSibling.innerHTML = '';
+		    }		    
+	    }	    
+
+	    document.getElementById('challenge6_check').onclick = function(event) {
+		    event.preventDefault();
+		    //var a1 = document.getElementById('challenge6_spell1');
+		    //var a2 = document.getElementById('challenge6_spell2');
+		    var a3 = document.getElementById('challenge6_spell3');
+		    var a4 = document.getElementById('challenge6_spell4');
+		    var a5 = document.getElementById('challenge6_spell5');
+		    
+		    var points = 0;
+		    /*if (md5(a1.value.toLowerCase()) === '4956ae739e801a22991a3975289beb3a') {
+			    a1.nextElementSibling.innerHTML = 'Correct!';
+			    points++;
+		    }		    
+		    else {
+			    a1.nextElementSibling.innerHTML = 'Wrong!';
+		    }
+		    if (md5(a2.value.toLowerCase()) === 'c1f4d77ab2c21e89a4e4900d58019719') {
+			    a2.nextElementSibling.innerHTML = 'Correct!';
+			    points++;
+		    }		    
+		    else {
+			    a2.nextElementSibling.innerHTML = 'Wrong!';
+		    }*/
+		    if (md5(a3.value.toLowerCase()) === 'e76591f1ba9db14c0bbad3fe894b246f') {
+			    a3.nextElementSibling.innerHTML = 'Correct!';
+			    points++;
+		    }		    
+		    else {
+			    a3.nextElementSibling.innerHTML = 'Wrong!';
+		    }
+		    if (md5(a4.value.toLowerCase()) === '7b98c8e551b9c787443b35f6602ef8d3') {
+			    a4.nextElementSibling.innerHTML = 'Correct!';
+			    points++;
+		    }		    
+		    else {
+			    a4.nextElementSibling.innerHTML = 'Wrong!';
+		    }
+		    if (md5(a5.value.toLowerCase()) === '8e86b73f81d6f434b1a926f5035e170e') {
+			    a5.nextElementSibling.innerHTML = 'Correct!';
+			    points++;
+		    }		    
+		    else {
+			    a5.nextElementSibling.innerHTML = 'Wrong!';
+		    }
+
+		    if (points == 3) {
+			    document.getElementById('finalchallenge').style.display = 'block';
+		    }
+		    else {
+			    document.getElementById('challenge6_check').nextElementSibling.innerHTML = '';
+		    }	
+		    
+		}			
+
+	    
+	</script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./macro4_files/jquery.min.js"></script>
+    <script src="./macro4_files/bootstrap.min.js"></script>
+    <script src="./macro4_files/docs.min.js"></script>
+  
+
+<iframe id="nr-ext-rsicon" style="position: absolute; display: none; width: 50px; height: 50px; z-index: 2147483647; border-style: none; background: transparent;" src="./macro4_files/saved_resource.html"></iframe><div id="speechify-selection-button-container">
+    <button class="always-inactive speechify-button plyr__control" data-loading="false" data-plyr="play">
+      
+<svg class="outline-play-icon" width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M7.125 4.67029C7.29167 4.76651 7.29167 5.00707 7.125 5.1033L1.29481 8.46936C1.12814 8.56559 0.919811 8.4453 0.919811 8.25285L0.919811 1.52073C0.919811 1.32828 1.12814 1.208 1.29481 1.30422L7.125 4.67029Z" fill="white" stroke="#4856fd" stroke-width="1.5"></path>
+</svg>
+
+      
+<svg class="icon--not-pressed" role="presentation" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" viewBox="0 0 26 26">
+  <path fill="#FFF" fill-rule="evenodd" d="M18.594 14.789l-10.7 5.35c-.988.493-2.189.093-2.683-.895C5.072 18.966 5 18.66 5 18.35V7.65c0-1.104.895-2 2-2 .31 0 .617.072.894.211l10.7 5.35c.988.494 1.388 1.695.894 2.683-.193.387-.507.701-.894.895z"></path>
+</svg>
+
+    </button>
+  </div><div id="speechify-paragraph-hover-button-container"></div></body></html>
