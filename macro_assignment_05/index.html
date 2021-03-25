@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      .note {
+        width: 150px;
+        height: 150px;
+        margin: 5px;
+        float: left;
+        box-sizing: border-box;
+        padding: 5px;
+        background-color: pink;
+        position: relative;
+      }
+
+      #corkboard {
+        background-image: url('images/corkboard.jpg');
+        min-height: 500px;
+      }
+
+      .tab {
+        display: inline-block;
+        width: 100px;
+        border: 1px solid #ccc;
+        text-align: center;
+        border-radius: 15px 15px 0px 0px;
+        padding: 5px;
+        border-bottom: 0px;
+      }
+
+      .active {
+        background-color: #ccc;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .delButton {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+      }
+      .editButton {
+    position: absolute;
+    right: 20px;
+    top: 0px;
+  }
+
+        .checkmarkButton {
+          position: absolute;
+          right: 40px;
+          top: 0px;
+        }
+
+        .completed {
+          position: absolute;
+          left: 0px;
+          top: 0px;
+          width: 50px;
+          height: 50px;
+        }
+        .leftButton{
+        position: absolute;
+        top: 70px;
+        left: 0px;
+      }
+
+      .rightButton{
+        position: absolute;
+        top: 70px;
+        right: 0px;
+      }
+
+
+    </style>
+  </head>
+  <body>
+
+    <h1>Yearly To-Do List</h1>
+
+    <div id="controls">
+      <div id="winter" class="tab active" data-mypanel="winterpanel">Winter</div>
+      <div id="spring" class="tab" data-mypanel="springpanel">Spring</div>
+      <div id="summer" class="tab" data-mypanel="summerpanel">Summer</div>
+      <div id="fall" class="tab" data-mypanel="fallpanel">Fall</div>
+
+      <select id="filter">
+        <option value="all">All Tasks</option>
+        <option value="winter">Winter</option>
+        <option value="spring">Spring</option>
+        <option value="summer">Summer</option>
+        <option value="fall">Fall</option>
+        <option value="completed">Completed</option>
+      <option value="uncompleted">Uncompleted</option>
+      </select>
+    </div>
+
+    <div id="panels">
+      <div id="allpanel" class="panel">
+        <!-- What is something you want to accomplish this winter? -->
+        <!-- <input type="text"><button data-mytype="all" data-mycolor="grey">Add note</button> -->
+      </div>
+      <div id="winterpanel" class="panel">
+        What is something you want to accomplish this winter?
+        <input type="text"><button data-mytype="winter" data-mycolor="grey">Add note</button>
+      </div>
+      <div id="springpanel" class="panel hidden">
+        What is something you want to accomplish this spring?
+        <input type="text" value=""><button data-mytype="spring" data-mycolor="green">Add note</button>
+      </div>
+      <div id="summerpanel" class="panel hidden">
+        What is something you want to accomplish this summer?
+        <input type="text"><button data-mytype="summer" data-mycolor="yellow">Add note</button>
+      </div>
+      <div id="fallpanel" class="panel hidden">
+        What is something you want to accomplish this fall?
+        <input type="text"><button data-mytype="fall" data-mycolor="brown" data-myseason="fall">Add note</button>
+      </div>
+    </div>
+
+    <div id="corkboard"></div>
+
+    <script>
+
+    </script>
+
+<script type="text/javascript" src="javascript.js">
+
+</script>
+
+  </body>
+
+</html>

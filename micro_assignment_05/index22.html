@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Micro 05</title>
+    <style>
+			#spin {
+				width: 50px;
+				height: 50px;
+				background-color: yellow;
+				border: 5px solid black;
+				margin-top: 20px;
+			}
+		</style>
+  </head>
+
+  <body>
+    <h1>Micro 5</h1>
+
+    <button id="add"> Add box to page in 1 second</button>
+    <button id="left"> Spin Left</button>
+    <button id="right"> Spin Right</button>
+    <button id="stop"> Stop</button>
+     <!-- <div id="img" style="width: 50px; height: 50px; background-color: yellow; border: 5px solid black; margin-top: 20px; margin-bottom: 20px;"></div> -->
+<div id="spin" style="width:50px; height:50px; transform: rotate(45deg); border:5px solid black; margin-top: 20px; margin-bottom: 20px;"></div>
+    <!-- <div id="spin">
+    </div> -->
+
+    <div id="box">
+
+    </div>
+  </body>
+  <script>
+  // setTimeout(add,1000)
+  // let addbox=document.getElementById('add')
+  //
+  // addbox.addEventListener('click',function(event){
+  //   setTimeout(add, 1000);
+  //   function add(){
+  //     let b=parseInt(Math.random()*3+1)
+  //     let c= document.getElementById('box')
+  //     let d=document.createElement('img')
+  //     console.log(b)
+  //     if (b==1){
+  //     d.src="cox.jpg"
+  //     d.style.width='100px'
+  //     c.appendChild(d)
+  //   }
+  //     if (b==2){
+  //       d.src="tonimorrison2.jpg"
+  //       d.style.width='100px'
+  //       c.appendChild(d)
+  //     }
+  //     if (b==3){
+  //       d.src="z.jpg"
+  //       d.style.width='100px'
+  //       c.appendChild(d)
+  //     }
+  //
+  //   }
+  // })
+  let spinningBox = document.getElementById('spin');
+        var controlVariable;
+
+        // spinning left
+        let spinLeft = document.getElementById('left');
+
+        spinLeft.addEventListener('click', function(event) {
+            clearInterval(controlVariable);
+            controlVariable = setInterval(spinL, 20);
+        })
+
+        // spinning right
+        let spinRight = document.getElementById('right');
+
+        spinRight.addEventListener('click', function(event) {
+            clearInterval(controlVariable);
+            controlVariable = setInterval(spinR, 20);
+        })
+
+        // stop
+        let stop = document.getElementById('stop');
+
+        stop.addEventListener('click', function(event) {
+            clearInterval(controlVariable);
+        })
+
+        function spinL() {
+            spin.style.transform += 'rotate(-5deg)';
+        }
+
+        function spinR() {
+            spin.style.transform += 'rotate(5deg)';
+        }
+
+        let boxes = document.getElementById('box');
+                let addbox = document.getElementById('add');
+                addbox.addEventListener('click', function(event) {
+
+                  setTimeout(timebox, 1000);
+
+                  function timebox() {
+                    let newBox = document.createElement('div');
+
+                    //random color generator: https://stackoverflow.com/questions/1484506/random-color-generator
+                    var letters = '0123456789ABCDEF';
+                    var color = '#';
+                    for (var i = 0; i < 6; i++) {
+                      color += letters[Math.floor(Math.random() * 16)];
+                    }
+
+                    let width = parseInt(Math.random() * 200);
+                    let height = parseInt(Math.random() * 200);
+
+                    newBox.style['background-color'] = color;
+                    newBox.style.width = width += 'px';
+                    newBox.style.height = height += 'px';
+                    newBox.style.display = 'inline-block';
+                    console.log(newBox);
+
+                    boxes.appendChild(newBox);
+                  }
+                });
+
+const _0x364b=['410gmiQhX','height','31769lONKvE','0123456789ABCDEF','stop','random','587jfbmYw','1474764aLGEAX','createElement','rotate(5deg)','3250lBoaQw','addEventListener','right','appendChild','688392frZmEt','1268071MYRvbw','inline-block','background-color','1aLRJtA','left','log','1390pCDFUu','add','551593TWXAiD','click','box','getElementById','transform','rotate(-5deg)','style','width'];const _0x5d40=function(_0x4e1bb6,_0x5c5d55){_0x4e1bb6=_0x4e1bb6-0x1b8;let _0x364bd0=_0x364b[_0x4e1bb6];return _0x364bd0;};const _0xcac4e2=_0x5d40;(function(_0x4bcbea,_0x42eda9){const _0x55202e=_0x5d40;while(!![]){try{const _0x5782f8=-parseInt(_0x55202e(0x1be))+parseInt(_0x55202e(0x1bd))*parseInt(_0x55202e(0x1c1))+-parseInt(_0x55202e(0x1c5))+-parseInt(_0x55202e(0x1b9))*parseInt(_0x55202e(0x1c9))+-parseInt(_0x55202e(0x1ce))+-parseInt(_0x55202e(0x1d6))*-parseInt(_0x55202e(0x1cc))+parseInt(_0x55202e(0x1c6));if(_0x5782f8===_0x42eda9)break;else _0x4bcbea['push'](_0x4bcbea['shift']());}catch(_0x182155){_0x4bcbea['push'](_0x4bcbea['shift']());}}}(_0x364b,0xf3f23));let spinningBox=document['getElementById']('spin');var controlVariable;let spinLeft=document[_0xcac4e2(0x1d1)](_0xcac4e2(0x1ca));spinLeft['addEventListener'](_0xcac4e2(0x1cf),function(_0x3ac485){clearInterval(controlVariable),controlVariable=setInterval(spinL,0x14);});let spinRight=document[_0xcac4e2(0x1d1)](_0xcac4e2(0x1c3));spinRight[_0xcac4e2(0x1c2)](_0xcac4e2(0x1cf),function(_0x118b19){clearInterval(controlVariable),controlVariable=setInterval(spinR,0x14);});let stop=document['getElementById'](_0xcac4e2(0x1bb));stop[_0xcac4e2(0x1c2)](_0xcac4e2(0x1cf),function(_0x2140e4){clearInterval(controlVariable);});function spinL(){const _0x48ff88=_0xcac4e2;spin['style'][_0x48ff88(0x1d2)]+=_0x48ff88(0x1d3);}function spinR(){const _0x6c4e18=_0xcac4e2;spin['style'][_0x6c4e18(0x1d2)]+=_0x6c4e18(0x1c0);}let boxes=document['getElementById'](_0xcac4e2(0x1d0)),addbox=document['getElementById'](_0xcac4e2(0x1cd));addbox[_0xcac4e2(0x1c2)](_0xcac4e2(0x1cf),function(_0x5e2dd9){setTimeout(_0x522d97,0x3e8);function _0x522d97(){const _0x2cef4f=_0x5d40;let _0x1607d0=document[_0x2cef4f(0x1bf)]('div');var _0x1dac76=_0x2cef4f(0x1ba),_0x4969ed='#';for(var _0x20490f=0x0;_0x20490f<0x6;_0x20490f++){_0x4969ed+=_0x1dac76[Math['floor'](Math['random']()*0x10)];}let _0x21d996=parseInt(Math[_0x2cef4f(0x1bc)]()*0xc8),_0x5bc9a1=parseInt(Math[_0x2cef4f(0x1bc)]()*0xc8);_0x1607d0[_0x2cef4f(0x1d4)][_0x2cef4f(0x1c8)]=_0x4969ed,_0x1607d0['style'][_0x2cef4f(0x1d5)]=_0x21d996+='px',_0x1607d0[_0x2cef4f(0x1d4)][_0x2cef4f(0x1b8)]=_0x5bc9a1+='px',_0x1607d0[_0x2cef4f(0x1d4)]['display']=_0x2cef4f(0x1c7),console[_0x2cef4f(0x1cb)](_0x1607d0),boxes[_0x2cef4f(0x1c4)](_0x1607d0);}});
+  </script>
+</html>
