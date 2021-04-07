@@ -1,0 +1,349 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Memory</title>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+        font-family: monospace;
+        text-align: center;
+      }
+      .hidden {
+        display: none;
+      }
+
+      #tokens {
+        width: 400px;
+        height: 300px;
+        margin: auto;
+      }
+
+      #tokens img {
+        width: 100px;
+        height: 100px;
+      }
+      .buttonClass {
+  margin-top: 10px;
+  font-size: 24px;
+  font-family: monospace;
+  border: none;
+  background-color: white;
+  width: 240px;
+  height: 50px;
+}
+.headerText {
+  font-size: 64px;
+}
+#screen_start {
+  font-size: 24px;
+}
+#timer {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+#gameOverContent {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+#ModeType {
+  font-size: 40px;
+}
+
+
+
+    </style>
+  </head>
+  <body>
+
+    <h1 id="header">Memory Matching Madness!</h1>
+
+    <!-- start screen -->
+    <!-- <div id="screen_start">
+      <p>Instructions go here</p>
+      <button id="start">Start</button>
+    </div> -->
+    <div id="screen_start">
+      <p id="intro">
+        Play a fast-paced game of "memory" and try to beat your best time!
+      </p>
+      <p class="hidden" id="chooseMode">Pick a mode!</p>
+      <button class="buttonClass" id="start" >Start</button>
+      <div>
+        <button id="easyMode" class="buttonClass hidden">Easy Mode</button>
+        <button id="mediumMode" class="buttonClass hidden">Medium Mode</button>
+        <button id="hardMode" class="buttonClass hidden">Hard Mode</button>
+      </div>
+    </div>
+
+    <!-- game play screen -->
+    <div id="screen_game" class="hidden">
+      <h2>Ready, Set, Match!</h2>
+      <div id="timer">0 seconds</div>
+      <div id="tokens">    </div>
+    </div>
+
+
+    <!-- game over screen -->
+    <!-- game play screen -->
+    <div id="screen_game" class="hidden">
+      <div id="timer">Time: 0 seconds</div>
+      <div id="tokens"></div>
+    </div>
+
+    <!-- game over screen -->
+    <div id="screen_gameover" class="hidden">
+      <h1 class="headerText">Game Over</h1>
+      <h2 id="ModeType"></h2>
+      <div id="gameOverContent">
+        <p id="yourScore"></p>
+        <p id="score1">Best Score:</p>
+        <p id="score2">2nd Place:</p>
+        <p id="score3">3rd Place:</p>
+      </div>
+      <button class="buttonClass" id="again">Play again!</button>
+      <button class="buttonClass" id="switchMode">Switch Mode</button>
+    </div>
+    <audio id="correctSound" src="clap.wav"></audio>
+    <audio id="incorrectSound" src="boom.wav"></audio>
+
+    <script>
+      let pickMode,
+          pickModeNum,
+          screen_start = document.querySelector("#screen_start"),
+          screen_game = document.querySelector("#screen_game"),
+          screen_gameover = document.querySelector("#screen_gameover"),
+          start = document.querySelector("#start"),
+          gameOverText = document.getElementById("gameOverContent"),
+          easyMode = document.getElementById("easyMode"),
+          mediumMode = document.getElementById("mediumMode"),
+          hardMode = document.getElementById("hardMode"),
+          intro = document.getElementById("intro"),
+          chooseMode = document.getElementById("chooseMode"),
+          header = document.getElementById("header"),
+          again = document.getElementById("again"),
+          switchMode = document.getElementById("switchMode"),
+          tokens = document.querySelector("#tokens"),
+          timeText = document.getElementById("timer"),
+          yourScore = document.getElementById("yourScore"),
+          score1 = document.getElementById("score1"),
+          score2 = document.getElementById("score2"),
+          score3 = document.getElementById("score3"),
+          ModeType = document.getElementById("ModeType");
+      window.localStorage.setItem("easyuser1", null),
+          window.localStorage.setItem("easyuser2", null),
+          window.localStorage.setItem("easyuser3", null),
+          window.localStorage.setItem("easybestTime", "999999999"),
+          window.localStorage.setItem("easysecTime", "999999999"),
+          window.localStorage.setItem("easythirdTime", "999999999"),
+          window.localStorage.setItem("mediumuser1", null),
+          window.localStorage.setItem("mediumuser2", null),
+          window.localStorage.setItem("mediumuser3", null),
+          window.localStorage.setItem("mediumbestTime", "999999999"),
+          window.localStorage.setItem("mediumsecTime", "999999999"),
+          window.localStorage.setItem("mediumthirdTime", "999999999"),
+          window.localStorage.setItem("harduser1", null),
+          window.localStorage.setItem("harduser2", null),
+          window.localStorage.setItem("harduser3", null),
+          window.localStorage.setItem("hardbestTime", "999999999"),
+          window.localStorage.setItem("hardsecTime", "999999999"),
+          window.localStorage.setItem("hardthirdTime", "999999999");
+      let oneFilled = !1,
+          twoFilled = !1,
+          threeFilled = !1,
+          correctSound = document.getElementById("correctSound"),
+          incorrectSound = document.getElementById("incorrectSound");
+          var assets = ['snorlax.png', 'electrabuzz.png', 'chansey.png', 'oddish.png',
+                  'pikachu.png', 'paras.png', 'arcanine.png', 'ponita.png',
+                  'venonat.png', 'eggsecute.png', 'machop.png', 'pidgey.png',
+                  'psyduck.png', 'tauros.png', 'vulpix.png', 'gloom.png',
+                  'krabby.png', 'butterfree.png', 'bulbasaur.png', 'clefairy.png',
+                  'koffing.png', 'goldeen.png', 'magikarp.png', 'beedrill.png',
+                  'lapras.png', 'meowth.png', 'ekans.png', 'jigglypuff.png',
+                  'horsea.png', 'polywog.png', 'sandshrew.png', 'rattata.png',
+                  'gengar.png', 'eevee.png', 'bellsprout.png', 'squirtle.png',
+                  'seel.png', 'caterpie.png']
+
+      let token1 = !1,
+          token2 = !1,
+          clickCounter = 0,
+          matchCounter = 0;
+      function reset() {
+          (token1.src = "assignment06_images/pokeball.png"), (token2.src = "assignment06_images/pokeball.png"), (token1 = !1), (token2 = !1), (clickCounter = 0);
+      }
+      again.addEventListener("click", function () {
+          screen_gameover.classList.add("hidden"), screen_game.classList.remove("hidden"), header.classList.remove("hidden"), generateGame(pickMode, pickModeNum);
+      }),
+          start.addEventListener("click", function () {
+              easyMode.classList.remove("hidden"), mediumMode.classList.remove("hidden"), hardMode.classList.remove("hidden"), chooseMode.classList.remove("hidden"), intro.classList.add("hidden"), start.classList.add("hidden");
+          }),
+          switchMode.addEventListener("click", function () {
+              header.classList.remove("hidden"), screen_start.classList.remove("hidden"), screen_game.classList.add("hidden"), screen_gameover.classList.add("hidden");
+          }),
+          easyMode.addEventListener("click", function () {
+              screen_start.classList.add("hidden"), screen_game.classList.remove("hidden"), generateGame((pickMode = "easy"), (pickModeNum = 6));
+          }),
+          mediumMode.addEventListener("click", function () {
+              screen_start.classList.add("hidden"), screen_game.classList.remove("hidden"), generateGame((pickMode = "medium"), (pickModeNum = 10));
+          }),
+          hardMode.addEventListener("click", function () {
+              screen_start.classList.add("hidden"), (pickMode = "hard"), (pickModeNum = 15), screen_game.classList.remove("hidden"), generateGame(pickMode, pickModeNum);
+          });
+      let timer = 1;
+      function startTiming() {
+          console.log(timer), (timeText.innerHTML = `Time: ${timer} seconds`), timer++;
+      }
+      function generateGame(e, t) {
+          let o = [],
+              r = setInterval(startTiming, 1e3);
+          if ("easy" == e) {
+              ModeType.innerHTML = "Easy Mode";
+              for (let e = 0; e < 6; e++) {
+                  let e = parseInt(Math.random() * assets.length);
+                  o.push(assets[e]), o.push(assets[e]), assets.splice(e, 1);
+              }
+          } else if ("medium" == e) {
+              (ModeType.innerHTML = "Medium Mode"), (tokens.style.width = "500px"), (tokens.style.height = "400px");
+              for (let e = 0; e < 10; e++) {
+                  let e = parseInt(Math.random() * assets.length);
+                  o.push(assets[e]), o.push(assets[e]), assets.splice(e, 1);
+              }
+          } else if ("hard" == e) {
+              (ModeType.innerHTML = "Hard Mode"), (tokens.style.width = "600px"), (tokens.style.height = "500px");
+              for (let e = 0; e < 15; e++) {
+                  let e = parseInt(Math.random() * assets.length);
+                  o.push(assets[e]), o.push(assets[e]), assets.splice(e, 1);
+              }
+          }
+          for (; o.length > 0; ) {
+              let n = document.createElement("img");
+              n.src = "assignment06_images/pokeball.png";
+              let i = parseInt(Math.random() * o.length);
+              (n.dataset.secret = o[i]),
+                  o.splice(i, 1),
+                  tokens.appendChild(n),
+                  n.addEventListener("click", function (n) {
+                      clickCounter < 2 &&
+                          (0 == token1
+                              ? ((token1 = n.currentTarget), (n.currentTarget.src = "assignment06_images/" + n.currentTarget.dataset.secret), clickCounter++)
+                              : ((token2 = n.currentTarget),
+                                token1 == token2 ||
+                                    (clickCounter++,
+                                    (n.currentTarget.src = "assignment06_images/" + n.currentTarget.dataset.secret),
+                                    token1.dataset.secret == token2.dataset.secret
+                                        ? ((correctSound.currentTime = 0),
+                                          correctSound.play(),
+                                          console.log("pair!"),
+                                          (token1 = !1),
+                                          (token2 = !1),
+                                          (clickCounter = 0),
+                                          ++matchCounter == t &&
+                                              (clearInterval(r),
+                                              (timer -= 1),
+                                              setTimeout(function () {
+                                                  for (
+                                                      screen_gameover.classList.remove("hidden"),
+                                                          header.classList.add("hidden"),
+                                                          screen_game.classList.add("hidden"),
+                                                          setTimeout(function () {
+                                                              timer < parseInt(window.localStorage.getItem(e + "bestTime"))
+                                                                  ? oneFilled || twoFilled || threeFilled
+                                                                      ? twoFilled || threeFilled
+                                                                          ? threeFilled
+                                                                              ? (console.log("14"),
+                                                                                window.localStorage.setItem(e + "user3", window.localStorage.getItem(e + "user2")),
+                                                                                window.localStorage.setItem(e + "user2", window.localStorage.getItem(e + "user1")),
+                                                                                window.localStorage.setItem(e + "user1", prompt("New High Score! What's your name??")),
+                                                                                window.localStorage.setItem(e + "thirdTime", window.localStorage.getItem(e + "secTime")),
+                                                                                window.localStorage.setItem(e + "secTime", window.localStorage.getItem(e + "bestTime")),
+                                                                                window.localStorage.setItem(e + "bestTime", timer),
+                                                                                (yourScore.innerHTML = `Your time: ${timer}`),
+                                                                                (score1.innerHTML = `Best Time: ${window.localStorage.getItem(e + "bestTime")}(${window.localStorage.getItem(e + "user1")}) - New High Score!`),
+                                                                                (score2.innerHTML = `2nd Place: ${window.localStorage.getItem(e + "secTime")}(${window.localStorage.getItem(e + "user2")})`),
+                                                                                (score3.innerHTML = `3rd Place: ${window.localStorage.getItem(e + "thirdTime")}(${window.localStorage.getItem(e + "user3")})`))
+                                                                              : (console.log("13"),
+                                                                                window.localStorage.setItem(e + "user3", window.localStorage.getItem(e + "user2")),
+                                                                                window.localStorage.setItem(e + "user2", window.localStorage.getItem(e + "user1")),
+                                                                                window.localStorage.setItem(e + "user1", prompt("New High Score! What's your name??")),
+                                                                                window.localStorage.setItem(e + "thirdTime", window.localStorage.getItem(e + "secTime")),
+                                                                                window.localStorage.setItem(e + "secTime", window.localStorage.getItem(e + "bestTime")),
+                                                                                window.localStorage.setItem(e + "bestTime", timer),
+                                                                                (yourScore.innerHTML = `Your time: ${timer}`),
+                                                                                (score1.innerHTML = `Best Time: ${window.localStorage.getItem(e + "bestTime")}(${window.localStorage.getItem(e + "user1")}) - New High Score!`),
+                                                                                (score2.innerHTML = `2nd Place: ${window.localStorage.getItem(e + "secTime")}(${window.localStorage.getItem(e + "user2")})`),
+                                                                                (score3.innerHTML = `3rd Place: ${window.localStorage.getItem(e + "thirdTime")}(${window.localStorage.getItem(e + "user3")})`),
+                                                                                (threeFilled = !0))
+                                                                          : (console.log("12"),
+                                                                            window.localStorage.setItem(e + "user2", window.localStorage.getItem(e + "user1")),
+                                                                            window.localStorage.setItem(e + "user1", prompt("New High Score! What's your name??")),
+                                                                            window.localStorage.setItem(e + "secTime", window.localStorage.getItem(e + "bestTime")),
+                                                                            window.localStorage.setItem(e + "bestTime", timer),
+                                                                            (yourScore.innerHTML = `Your time: ${timer}`),
+                                                                            (score1.innerHTML = `Best Time: ${window.localStorage.getItem(e + "bestTime")}(${window.localStorage.getItem(e + "user1")}) - New High Score!`),
+                                                                            (score2.innerHTML = `2nd Place: ${window.localStorage.getItem(e + "secTime")}(${window.localStorage.getItem(e + "user2")})`),
+                                                                            (twoFilled = !0))
+                                                                      : (window.localStorage.setItem(e + "user1", prompt("New High Score! What's your name?")),
+                                                                        console.log("11"),
+                                                                        window.localStorage.setItem(e + "bestTime", timer),
+                                                                        (yourScore.innerHTML = `Your time: ${timer}`),
+                                                                        (score1.innerHTML = `Best Time: ${window.localStorage.getItem(e + "bestTime")}(${window.localStorage.getItem(e + "user1")}) - New High Score!`),
+                                                                        (oneFilled = !0))
+                                                                  : timer < parseInt(window.localStorage.getItem(e + "secTime"))
+                                                                  ? twoFilled || threeFilled
+                                                                      ? threeFilled
+                                                                          ? (window.localStorage.setItem(e + "user3", window.localStorage.getItem(e + "user2")),
+                                                                            window.localStorage.setItem(e + "user2", prompt("New High Score! What's your name??")),
+                                                                            window.localStorage.setItem(e + "thirdTime", window.localStorage.getItem(e + "secTime")),
+                                                                            window.localStorage.setItem(e + "secTime", timer),
+                                                                            (yourScore.innerHTML = `Your time: ${timer} seconds`),
+                                                                            (score1.innerHTML = `Best Time: ${window.localStorage.getItem(e + "bestTime")}(${window.localStorage.getItem(e + "user1")})`),
+                                                                            (score2.innerHTML = `2nd Place: ${window.localStorage.getItem(e + "secTime")}(${window.localStorage.getItem(e + "user2")}) - New High Score!`),
+                                                                            (score3.innerHTML = `3rd Place: ${window.localStorage.getItem(e + "thirdTime")}(${window.localStorage.getItem(e + "user3")})`))
+                                                                          : (window.localStorage.setItem(e + "user3", window.localStorage.getItem(e + "user2")),
+                                                                            window.localStorage.setItem(e + "user2", prompt("New High Score! What's your name??")),
+                                                                            window.localStorage.setItem(e + "thirdTime", window.localStorage.getItem(e + "secTime")),
+                                                                            window.localStorage.setItem(e + "secTime", timer),
+                                                                            (yourScore.innerHTML = `Your time: ${timer} seconds`),
+                                                                            (score1.innerHTML = `Best Time: ${window.localStorage.getItem(e + "bestTime")}(${window.localStorage.getItem(e + "user1")})`),
+                                                                            (score2.innerHTML = `2nd Place: ${window.localStorage.getItem(e + "secTime")}(${window.localStorage.getItem(e + "user2")}) - New High Score!`),
+                                                                            (score3.innerHTML = `3rd Place: ${window.localStorage.getItem(e + "thirdTime")}(${window.localStorage.getItem(e + "user3")})`),
+                                                                            (twoFilled = !0),
+                                                                            (threeFilled = !0))
+                                                                      : (window.localStorage.setItem(e + "user2", prompt("New High Score! What's your name??")),
+                                                                        console.log("21"),
+                                                                        (yourScore.innerHTML = `Your time: ${timer} seconds`),
+                                                                        window.localStorage.setItem(e + "secTime", timer),
+                                                                        (score1.innerHTML = `Best Time: ${window.localStorage.getItem(e + "bestTime")}(${window.localStorage.getItem(e + "user1")})`),
+                                                                        (score2.innerHTML = `2nd Place: ${window.localStorage.getItem(e + "secTime")}(${window.localStorage.getItem(e + "user2")}) - New High Score!`),
+                                                                        (twoFilled = !0))
+                                                                  : timer < parseInt(window.localStorage.getItem(e + "thirdTime"))
+                                                                  ? (window.localStorage.setItem(e + "user3", prompt("New High Score! What's your name??")),
+                                                                    (threeFilled = !0),
+                                                                    window.localStorage.setItem(e + "thirdTime", timer),
+                                                                    (yourScore.innerHTML = `Your time: ${timer} seconds`),
+                                                                    (score1.innerHTML = `Best Time: ${window.localStorage.getItem(e + "bestTime")}(${window.localStorage.getItem(e + "user1")})`),
+                                                                    (score2.innerHTML = `2nd Place: ${window.localStorage.getItem(e + "secTime")}(${window.localStorage.getItem(e + "user2")})`),
+                                                                    (score3.innerHTML = `3rd Place: ${window.localStorage.getItem(e + "thirdTime")}(${window.localStorage.getItem(e + "user3")}) - New High Score!`))
+                                                                  : ((yourScore.innerHTML = `Your time: ${timer} seconds`),
+                                                                    (score1.innerHTML = `Best Time: ${window.localStorage.getItem(e + "bestTime")}`),
+                                                                    (score2.innerHTML = `2nd Place: ${window.localStorage.getItem(e + "secTime")}`),
+                                                                    (score3.innerHTML = `3rd Place: ${window.localStorage.getItem(e + "thirdTime")}`)),
+                                                                  (timer = 1);
+                                                          }, 100),
+                                                          o = [],
+                                                          matchCounter = 0,
+                                                          timeText.innerHTML = "Time: 0 seconds";
+                                                      tokens.firstChild;
+
+                                                  )
+                                                      tokens.removeChild(tokens.lastChild);
+                                              }, 500)))
+                                        : ((incorrectSound.currentTime = 0), incorrectSound.play(), setTimeout(reset, 500)))));
+                  });
+          }
+      }
+    </script>
+
+
+  </body>
+</html>
