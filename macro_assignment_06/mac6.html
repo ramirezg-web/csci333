@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!-- saved from url=(0077)https://i6.cims.nyu.edu/~pcc386/webdev/ChrisMacro_06/macro_assignment_06.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Memory</title>
+    <link rel="stylesheet" href="styles.css">
+    <h1 class="headerText" id="header">Memory Matching Madness!</h1>
+
+    <!-- start screen -->
+    <div id="screen_start">
+      <p id="intro">
+        It's the Pokemon Memory Game! Try and beat your best time!
+      </p>
+      <p class="hidden" id="chooseMode">Pick a mode!</p>
+      <button class="buttonClass" id="start" style="">Start</button>
+      <div>
+        <button id="easyMode" class="buttonClass hidden">Easy Mode</button>
+        <button id="mediumMode" class="buttonClass hidden">Medium Mode</button>
+        <button id="hardMode" class="buttonClass hidden">Hard Mode</button>
+      </div>
+    </div>
+
+    <!-- game play screen -->
+    <div id="screen_game" class="hidden">
+      <div id="timer">Time: 0 seconds</div>
+      <div id="tokens"></div>
+    </div>
+
+    <!-- game over screen -->
+    <div id="screen_gameover" class="hidden">
+      <h1 class="headerText">Game Over</h1>
+      <h2 id="modeHeader"></h2>
+      <div id="gameOverContent">
+        <p id="yourScore"></p>
+        <p id="score1">Best Score:</p>
+        <p id="score2">2nd Place:</p>
+        <p id="score3">3rd Place:</p>
+      </div>
+      <button class="buttonClass" id="again">Play again!</button>
+      <button class="buttonClass" id="switchMode">Switch Mode</button>
+    </div>
+    <audio id="correctSound" src="sound/correct.wav"></audio>
+    <audio id="incorrectSound" src="sound/incorrect.wav"></audio>
+    <script src="script.js"></script>
+
+
+<iframe id="nr-ext-rsicon" style="position: absolute; display: none; width: 50px; height: 50px; z-index: 2147483647; border-style: none; background: transparent;" src="./mac6_files/saved_resource.html"></iframe></body></html>
