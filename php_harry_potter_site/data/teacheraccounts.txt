@@ -1,0 +1,3 @@
+dumbledore,phoenix1,Albus,Dumbledore
+mcgonigal,iCanTurnIntoCat,Minerva,McGonical
+snape,hatePotter?,Severus,Snape
