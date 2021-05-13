@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/assignment09.php -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>CSCI-UA.0061 : Fall 2020</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./macro9_files/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./macro9_files/style.css" rel="stylesheet">
+    
+    <style type="text/css">
+	
+		.imageholder {
+			border: 1px solid #eee;
+			padding: 25px;
+			width: 600px;
+			margin-bottom: 50px;
+		}    
+		
+		.imageholder img {
+			width: 500px;
+		}
+	    
+	</style>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  <style id="holderjs-style" type="text/css"></style><script data-dapp-detection="">!function(){let e=!1;function n(){if(!e){const n=document.createElement("meta");n.name="dapp-detected",document.head.appendChild(n),e=!0}}if(window.hasOwnProperty("ethereum")){if(window.__disableDappDetectionInsertion=!0,void 0===window.ethereum)return;n()}else{var t=window.ethereum;Object.defineProperty(window,"ethereum",{configurable:!0,enumerable:!1,set:function(e){window.__disableDappDetectionInsertion||n(),t=e},get:function(){if(!window.__disableDappDetectionInsertion){const e=arguments.callee;e&&e.caller&&e.caller.toString&&-1!==e.caller.toString().indexOf("getOwnPropertyNames")||n()}return t}})}}();</script></head>
+
+  <body data-new-gr-c-s-check-loaded="14.1010.0" data-gr-ext-installed="">
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/index.html">Web Development &amp; Programming, Fall 2020</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li><a href="https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/index.html">Home</a></li>
+            <li><a href="https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/syllabus.html">Syllabus</a></li>
+            <li class="active"><a href="https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/schedule.html">Schedule</a></li>
+          </ul>
+        </div>
+        
+        <div id="content" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+	        <h1 class="page-header">Assignment 09: Let's Chat</h1>
+	        
+	        <p>For this program you'll be creating a basic chat room that will support multiple participants.  Here's a quick video to show how the basic functionality of the site should work:</p>
+	        
+	        <iframe width="560" height="315" src="./macro9_files/T10K0JdGP4s.html" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+          		
+	        <h3>Basic features</h3>
+	        
+	        <ul>
+		        <li>HTML &amp; CSS
+		        	<ul>
+			        	<li>A content panel that asks the user to provide a nickname. This panel should  include a button that can be used to save the nickname. This panel should be visible when the page loads.</li>
+			        	<li>A content panel that displays the previous chat history, a text box for new chat messages and a button. This panel should be invisible when the page loads.</li>
+			        	<li>Format your page so that it's visually appealing, though you don't need to go too crazy with this.</li>
+		        	</ul>
+		        </li>
+		        <li>Back-end setup
+		        	<ul>
+			        	<li>Set up a 'data' folder - make sure you have full permissions to read and write  to this location. Special note: unlike with the Harry Potter "CRUD" application, you will want your 'data' folder stored inside of your 'public_html' folder so that a client's browser can access it directly using an AJAX call.</li>
+			        	<li>Set up a 'config.php' file that contains a path variable that points to this folder.  You can use the <code>getcwd()</code> function in PHP to easily identify the full path to the file.</li>
+		        	</ul>
+		        </li>
+		        <li>Application Logic
+		        	<ul>
+			        	<li>When the user supplies a nickname the program should check to see if they supplied a valid nickname.  For the purpose of the basic program a valid nickname is a string with at least 1 character.  If so, the panel can be hidden and the chat window can be shown.  Otherwise an error message should appear.</li>
+			        	<li>When the user types in a message and clicks submit / hits enter an AJAX request should be generated to a PHP script - you will need to send the message they typed and their nickname to  this script.</li>
+			        	<li>This script should accept this information and validate it.  Valid characters include alphabetic (A-Z), numeric (0-9) and a small # of punctuation characters (<code>'!@#$%^&amp;*()"?.,</code>).  Any character outside of these should be rejected and removed.  You can use string modification methods in PHP to do this - hint: the <code>preg_replace</code> function would be useful here. Also ensure that the message contains at least one character of usable text.  If successful, store the user's name and message in a file called 'messages.txt' in your 'data' folder'. If not send some message back to the client and display an appropriate error message to the user (i.e. "message too short")</li>
+			        	<li>Set up another JavaScript function called 'getChatMessages'  - this function should initiate an AJAX request to the server and attempt to access the 'messages.txt' file directly (you can use an AJAX request to get the contents of a text file like this - you don't always have to use it with PHP).  Use this information to populate the textarea with the previous chat history.</li>
+			        	<li>Set up some kind of callback structure (setTimeout, setInterval) to repeatedly check for new chat messages.  You can do this every 1-2 seconds (don't go any faster than this).  Hint: use the "no caching" technique we discussed to prevent the browser from caching the results of the AJAX call. You can do this by appending a random number to the GET variable string associated with the AJAX call (i.e. chatlog.txt?nocache=12345)</li>
+		        	</ul>
+		        </li>
+	          	
+	        </ul>
+	          	
+	        <h3>Advanced Features (REQUIRED)</h3>	        
+	        <p>Note that these are not all represented in the video above.</p>
+	        <ol>
+		        <li>Name management subsystem:
+		        	<ul>
+			        	<li>Give the user the ability to change their name after the chat room starts up.</li>
+						<li>Store the user's name on their computer using localStorage or cookies so they don't need to enter it every time they visit the page.</li>
+						<li>If a name can be found when the page loads you can skip directly to the chat room (you don't need to prompt them to enter a name)</li>
+		        	</ul>
+		        </li>
+				<li>Set up the textarea so that when new data comes in it automatically scrolls to the bottom of the box so the user can see the most recent message.  However, if the user is currently scrolling inside of the textarea you should prevent this from happening (otherwise the user's textarea will "jump").  Hint - detect if the user is currently hovering over the textbox - if so, prevent the textbox from jumping down on the page.</li>
+		        <li>Have your program support multiple chat rooms - the user can select which chat room they want to use through a drop down menu on the web page. This will most likely require you to have multiple text files to manage each chat room.</li>
+		        <li>Build in a server-side 'filtering' system that prevent the user from using 'bad' words (pick innocuous words to start, such as 'apple' and 'pear') -- when these words are detected it should force the system to reject the message and the user should be told what happened. Set up these 'banned' words in a text file so that you don't have to hard-code your PHP file with them.
+		        <ul>
+			        <li>Hint #1: store your 'banned' words in a text file separated by spaces: <pre>apple pear peach grapefruit orange</pre></li>
+			        <li>Hint #2: you can use the <a href="https://www.php.net/manual/en/function.strpos.php" target="_blank">strpos</a> function to find the position of a string inside of another string.</li>
+			        <li>Hint #3: you may find other ways of doing this online, and you are welcome to use those technique.  However, keep in mind that the PHP version that is available on i6 is version 5.4.16 which is pretty old.  Some PHP language features will be available when you test your work on your local machine but may fail when you deploy them to i6.  <a href="https://www.php.net/manual/en/function.strpos.php" target="_blank">The PHP documentation site</a> always will tell you what version of PHP a given function or technique works under.</li>
+		        </ul>
+		        </li>
+		        <li>Build in an admin panel which lets you:
+		        	<ul>
+			        	<li>Log in</li>
+			        	<li>Clear the contents of any chat room</li>
+			        	<li>Update the 'banned' word list</li>
+			        	<li>Keep track of usage logs (who's using the chat room, when they used it, their IP addresses, etc)
+		        	</li></ul>
+		        </li>
+		        
+	        </ol>
+          			  			  	
+		  	<p>Thoroughly test your work and make sure that it meets the requirements set forth above.  When you are finished, post your project to the i6 server and link it from your main menu page.  We should be able to visit your 'webdev' folder and click on the link to the fourth assignment and visit your page.  Also create a ZIP archive of your work and submit it to NYU classes under the 'Macro Assignment 09' category.  <strong>In addition, please submit a link to your 'admin' panel and any password that may be necessary to access this tool.</strong></p>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./macro9_files/jquery.min.js"></script>
+    <script src="./macro9_files/bootstrap.min.js"></script>
+    <script src="./macro9_files/docs.min.js"></script>
+  
+
+</body></html>
