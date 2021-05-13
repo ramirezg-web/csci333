@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/assignment08.php -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>CSCI-UA.0061 : Spring 2020</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./macro8_files/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./macro8_files/style.css" rel="stylesheet">
+    
+    <style type="text/css">
+	
+		.imageholder {
+			border: 1px solid #eee;
+			padding: 25px;
+			width: 600px;
+			margin-bottom: 50px;
+		}    
+		
+		.imageholder img {
+			width: 500px;
+		}
+	    pre {
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+	</style>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  <script data-dapp-detection="">!function(){let e=!1;function n(){if(!e){const n=document.createElement("meta");n.name="dapp-detected",document.head.appendChild(n),e=!0}}if(window.hasOwnProperty("ethereum")){if(window.__disableDappDetectionInsertion=!0,void 0===window.ethereum)return;n()}else{var t=window.ethereum;Object.defineProperty(window,"ethereum",{configurable:!0,enumerable:!1,set:function(e){window.__disableDappDetectionInsertion||n(),t=e},get:function(){if(!window.__disableDappDetectionInsertion){const e=arguments.callee;e&&e.caller&&e.caller.toString&&-1!==e.caller.toString().indexOf("getOwnPropertyNames")||n()}return t}})}}();</script><style id="holderjs-style" type="text/css"></style></head>
+
+  <body data-new-gr-c-s-check-loaded="14.1010.0" data-gr-ext-installed="">
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/index.html">Web Development &amp; Programming, Spring 2020</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li><a href="https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/index.html">Home</a></li>
+            <li><a href="https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/syllabus.html">Syllabus</a></li>
+            <li class="active"><a href="https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/schedule.html">Schedule</a></li>
+          </ul>
+        </div>
+        
+        <div id="content" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+	        <h1 class="page-header">Assignment 08: Harry Potter "CRUD" Application</h1>
+	        
+	        <p>For this program you'll be working through a muli-page "CRUD" site (Create, Read, Update, Delete) - this kind of application will demonstration some techniques that can be used to create a simple content management system.</p>
+	        
+	        <p><a href="https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/sourcecode/22_php_harry_potter_site/php_harry_potter_site.zip" target="_blank">To start, download the source code for the basic project here</a>.  You will be working through the basic features of the site in class on 4/13.  Next week we will work as a group to add in some advanced features using some new concepts.</p>
+	        
+	        <h3>Basic features (started in class on 4/13)</h3>
+	        
+			<pre>Task #0
+
+- Unzip the downloadable package
+- Move the ENTIRE folder into your MAMP directory
+- Familiarize yourself with the layout of the file system:
+
+php_harry_pottery_site/
+			data/
+				about.txt
+				home.txt
+				policies.txt
+				teacheraccounts.txt
+			public_html/
+				images/
+					hogwarts_logo.png
+				about.php
+				admin.php
+				config.php
+				index.php
+				policies.php
+				styles.css
+
+- The 'data' folder is a web-inaccessible folder that will be stored in your home directory. This will prevent people from visiting your site and 'snooping' inside of it.  This folder contains a series of text files which will be used by your site to render dynamic content.
+
+- The 'public_html' folder is the web-accessible folder that houses your application code.  'index.php' is the first file that will load if the user visits the site and does not specify a filename.
+
+- 'config.php' contains PHP code that defines the absolute server path to the 'data' folder.  This file will be used by all of your PHP scripts when accessing the 'data' folder, so make sure the value here is set to your own data folder.  DO THIS NOW!
+
+
+
+
+
+Task #1: Dynamic Page Content
+
+- Set up the 'index', 'about' and 'policies' page to include dynamic content that is stored in the 'home.txt', 'about.txt' and 'policies.txt' files.
+
+- If the site administrator ever changes these files these pages should automatically update with the new content without having to edit the PHP files.
+
+- You can test your work by visiting your site in the browser - when you visit any of these pages the contents from the related text file should appear on the page.
+
+	- Hint: use the 'include' function to do this.
+	- Hint: look at the first few lines in 'index.php' - you will see that you are already including 'config.php' - this means that any variables defined in 'config.php are available to your program already, including '$file_path'
+
+
+
+Task #2: Emergency Alert System
+
+- Create a new text file in the 'data' folder called 'alerts.txt'
+
+- Store some text in this file that you want to appear on all pages in the case of a Hogwarts emergency (i.e. "Classes canceled: dragon attack!")
+
+- Set up every page so that the alert shows up at the top of the page, directly above the 'header' div.  If there is text in this alert file.  Use the CSS ID of "alert" on this element to display it using a red background.
+
+- If the contents of the file is empty you should not show anything on the page.
+
+- Test your work by repeatedly editing this file - if you put text into it and refresh a page you should see the alert show up.  If you delete the contents of this file you should see no alert box when you refresh the page.
+
+	- Hint: use 'file_get_contents' to get the contents of the file
+	- Hint: test the data in the file to make sure it is not empty using an 'if' statement
+
+
+
+
+
+Task #3: User Login System
+
+- Note: this exercise is much better than using JavaScript for authentication, but it's still not perfect due to the fact that we're using insecure cookies that the user can easily mess with.  We will cover a better way to do this later in this assignment.  For now, this is an exercise is learning how to work with files and cookies using PHP.
+
+- Design an HTML form to prompt the user for a username and password
+
+- When the use submits the form, send the data to a file called 'login.php' - this file should then do the following:
+
+	- Extract the username and password from the $_POST superglobal
+
+	- Open up the 'teacheraccounts.txt' file and read its data into a string (hint: you might need to include the 'config.php' file to access your file path!)
+
+	- Before you continue, print out the string.  It will contain information about the school administrator in the following format:
+
+		username,password,first_name,last_name
+
+	- Check the supplied username &amp; password against this string.  hint: use the 'explode' function to separate the string into its individual components.  This works like the 'split' function in Python.  Hint: the 'trim' function in PHP can be used to remove any extra 'whitespace' breaks at the beginning or end of a string.  Ex:  $data = trim($data);
+
+	- If the supplied username &amp; password are correct you should do the following:
+
+		- Set a cookie on their computer indicating that they logged in successfully.
+		- Set a cookie on their computer with their first name
+		- Set a cookie on their computer with their last name
+		- Set a cookie on their computer with their username
+		- Redirect the user's browser to 'admin.php'
+
+	- If the supplied an incorrect username &amp; password you should just redirect the user's browser to 'admin.php' without setting a cookie. Send back an error message using a GET variable too.
+
+	- Check your work! See if you have a cookie set by opening up your developer's console in your browser
+
+	- Edit 'admin.php' to look for the presence of this cookie using the $_COOKIE superglobal.  If it exists, display a 'Welcome' message to the user instead of the login form.  Welcome the user by name using the cookie you set to hold their first &amp; last name (i.e. the page should read "Welcome Albus Dumbledore!"
+
+
+
+
+
+Task #4: Logout
+
+- If the user is logged in, add in a 'logout' link to the 'admin.php' page. This link should point to a page named 'logout.php'
+
+- When run, this script should remove the cookies on the client's computer.
+
+- You can remove a cookie on the client's computer by setting the cookie's expiration data to sometime in the past.  We generally do this in PHP using the following line of code:
+
+	setcookie(COOKIENAME, '', time()-3600);
+
+- Redirect the user back to 'admin.php' when this is done - the page will reload, and the login form should appear again
+
+- Make a special message show up indicating that the user has logged out (Hint: use the GET method to send a variable to 'admin.php' telling it that you just logged the user out.  For example:  admin.php?action=loggedout)
+
+
+
+
+
+Task #5: Content Management System
+
+- If the user is logged in, add in a form and a series of four 'textarea' elements to the 'admin.php' page.
+
+- These 'textarea' units will be used to display an editable version of each of the four text files that you set up in Tasks #1 and #2 above.
+
+- When the page loads, open these files and display their contents into these four text areas, like this:
+
+	&lt;textarea name="home"&gt;TEXT_FOR_HOME_GOES_HERE&lt;/textarea&gt;
+
+- Add in a 'submit' button to the form
+
+- When the user clicks the 'submit' button, send the data to a file named 'updatecontent.php'
+
+- Create the 'updatecontent.php' file to do the following:
+
+	- Access the user's cookie - if they are not authenticated, redirect them back to 'admin.php'. This is a security feature!  If someone tries to access this script and they aren't logged in they could potentially update the content of our site.  By checking the cookie here we can 'prove' that they are logged in before we do anything dangerous.  You can check to see if a value is set or not set by using the 'isset' function in PHP (i.e. if (!isset(VARIABLE)) )
+
+	- If they are logged in, access the value of each 'textarea' using the $_POST superglobal
+
+	- Overwrite each text file with its new contents
+
+	- Redirect the user back to 'admin.php'
+
+- Check your work by visiting the other pages - you should be able to update the contents of each page using your 'admin' interface as well as set up an emergency alert to show up on all pages.
+
+- Once the system works you can add in confirmation message letting the user know that their changes have been saved (using the GET method described in the previous task)
+
+
+
+
+
+
+Task #6: Multiple Administrator Support
+
+- Next, we are going to open up the site so that multiple administrators can log in and use the system.
+
+- Edit the 'teacheraccounts.txt' file in the 'data' folder to include two additional entries for two new administrators:
+
+	dumbledore,phoenix1,Albus,Dumbledore
+	mcgonigal,iCanTurnIntoCat,Minerva,McGonical
+	snape,hatePotter?,Severus,Snape
+
+- Update your 'login.php' to include the following:
+
+	- You will need to isolate each individual record by splitting up the file based on the line break
+
+	- Next, visit every line using a 'for' loop
+
+	- Split apart the individual to extract each individual value
+
+	- Text to see if the incoming username/password combination matches the account you are currently examining.  If so, you can set a cookie and redirect the user.  You can simply end the program here by calling the 'exit' function or using the 'break' statement to stop the loop.
+
+
+
+
+
+
+Task #7: Administrator Logging System
+
+- When an administrator successfully logs in you should log this activity into a new file called 'adminlog.txt'
+
+- Append a record that looks like the following to this log file:
+
+CURRENT_TIME,dumbledore,login
+
+- Make sure to print a linebreak at the end of your line ("\n") - make sure you use double quotes, otherwise PHP will treat the linebreak as the literal characters '\n'.
+
+- You can get the current time as a UNIX timestamp in PHP using the time() function
+
+- Check your work by looking at your 'data' folder to make sure that this file was created successfully
+
+- Once this works update your system so that the website logs every time the user logs out as well as when they make a change to the site's contents.
+
+
+
+
+
+
+
+Task #8: Administrator View Login History
+
+- On the 'admin.php' page, add in a link to a new page called 'admin_report.php' - this link should only be displayed if there is a logged in user.
+
+- Create this page by duplicating one of your other pages.  This page should do the following:
+
+	- If the user visits 'admin_report.php' the page checks to see if they are logged in - if not, the page immediately redirects them to 'admin.php' and exits the program (using 'exit;'). Do this at the top of the page, before you print any HTML to the browser
+
+	- If the user is logged in the page should access the 'adminlog.txt' file and display all of the records to the user using a table.  Hint: create a table tag with the appropriate # of columns in regular HTML.  Then process your data by splitting it accordingly.  Print out the data inside of a 'for' loop using the approbate "td" and "tr" tags.
+
+	- Hint: you can covert a UNIX timestamp into a human readable date using PHP's 'date' function, like this:  date('Y-m-d H:i:s', TIMESTAMP);
+
+
+
+
+
+
+
+
+Task #9: Deploy to i6
+
+- Now it's time to copy over your files to the i6 server and deploy your site.  Begin by copying your 'php_harry_potter_site' folder to your 'public_html/webdev' folder.
+
+- Next, upload your 'data' folder to your HOME directory, outside of 'public_html'
+
+- Get the full path to this directory and update your 'config.php' file to point to this new location
+
+- Set the permissions on your data directory and all files inside of this directory to 777 (full permissions)
+			</pre>
+			
+			<h3>Optional Features (Extra Credit)</h3>
+
+
+
+
+
+
+<pre>Extra Credit Task #10: Student Accounts
+
+ - Add in a new page called 'register.php' - this page will allow students to sign up for their own account on the site.
+
+ - This page should be linked from the sidebar of the site.  Ensure that the page matches the graphical layout of the rest of the site.
+
+ - This page should contain a form that asks the student for their first name, last name, desired username and password.  When the form is submitted a PHP page should validate this data using the following rules:
+
+  1. The username must be alpahnumeric
+	2. The password must be alpahnumeric
+	3. The firstname must be alphabetic
+	4. The lastname must be alphabetic
+	5. The username must be UNIQUE - this means that you will need to create a new file on the server to hold student accounts (similar to how we are storing teacher accounts)
+	6. If the username is unique, add the desired user to your text file and log them in using a PHP session
+
+ - If the user is logged in the 'register.php' page should no longer exist on the sidebar.
+
+ - Also, the user should be welcomed at the top of every page by displaying that they are logged in.  This message should contain a link to a logout page that will log the student out of the system, destroy their session and revert the system back to an un-logged in state.
+
+ - Ensure that the user is only logged into one account at a time - also ensure that you cannot log into both a teacher and student account at the same time!
+ 
+ - Create a new page for students called "Student Notebook" - this page should only be visible if the student is logged in.
+ 
+ - On the student notebook page you should allow the student to fill in a form (a large text area) for them to take notes.  When they hit submit their note will be stored on the server.  Use the student's username as the filename (i.e. user 'harrypotter' would have a file called 'harrypotter.txt')
+ 
+ - Update this page so that when a student visits it they will be able to see their previous notebook.  Every student should only see their own notebook - i.e. user 'ronweasley' cannot see the notebook of 'harrypotter'
+ 
+ 
+ 
+ 
+ 
+
+Extra Credit Task #11: Security Upgrade
+
+- Now that the site is finished we can take a step back and see if there are any areas we can improve in terms of the user experience and overall security of our site.
+
+- One big issue that was mentioned early in the exercise was the reliance on Cookies to keep track of whether the user is logged in.  These Cookies live on the client's machine, and because they are out of our control they can easily be tampered with.
+
+- We can address this somewhat by using a "session" to manage sensitive data.  Here's how this technique works:
+
+ 1. When the user logs in and authenticates we can create a file on the server with a randomized unique name (i.e. abc123)
+
+ 2. We can then store all of the "sensitive" information about the user inside of this file (their first name, last name, etc.)
+
+ 3. Next, we can drop a Cookie on the client's machine with the name of this file (i.e. id=abc123)
+
+ 4. When the client contacts the server we can look for the presence of this file -- if it exists, we can open it and extract the sensitive data and allow them to log in.  If it does not exist then we know that they have either (a) logged out or (b) are trying to hack our site
+
+- This technique is commonly used in web applications and is referred to as a "Session".  PHP has a built-in library to do this which works as follows:
+
+ 1. Call 'session_start()' at the beginning of a PHP page.  This will do a number of things:
+
+ 	- If a session does not exist, one will be created with a random ID.  This randomly named session will be available to Apache via its internal file system.  You can see this on your own computer if your are running MAMP.  For example, on Mac OS you can go to Applications/MAMP/tmp/php and see your sessions listed in your Finder application.
+
+	- If a session does not exist a Cookie will also be dropped on the client's computer.  This cookie will have a name of PHPSESSID and its value will be the random ID that was created in the previous step.
+
+	- If a session DOES exist then the session management system will read all data from this file on the server into the $_SESSION superglobal.  You can now access any previously added session values.
+
+ 2. You can use the $_SESSION superglobal to both READ and WRITE data to the session.  Want to add some secure data to the user's session?  Simply use the assignment operator, like this:
+
+$_SESSION['name'] = 'pikachu';
+
+ 3. You can DELETE a value from the session by using the 'unset' function, like this:
+
+unset( $_SESSION['name'] )
+
+ 4. You can wipe out all variables in a session by using the session_unset() function
+
+ 5. ... and finally you can fully destroy a session (remove the cookie from the client's machine) by using the session_destroy() function.
+
+ 6. When deactivating a session it's recommended to call both session_unset() and session_destroy() to ensure that the variables are deleted and the cookie is removed from the client's machine.
+
+
+- Now that you know the basics, re-write the login system so that the client does not have cookies containing the user's first name, last name and the logged in flag.  Instead, start up a session at the top of the 'admin' page and set / check these values.
+
+- Note that you will need to call session_start() at the top of EVERY page on which you plan on using this session data.
+
+- Also note that making this change may break other features that you've added - you may have to go back in and make some changes to your site.  I'd recommend making a copy of your old code before attempting to add in this feature.</pre>
+
+
+          			  			  	
+		  	<p>Thoroughly test your work and make sure that it meets the requirements set forth above.  When you are finished, post your project to the i6 server and link it from your main menu page.  We should be able to visit your 'webdev' folder and click on the link to the fourth assignment and visit your page.  Also create a ZIP archive of your work and submit it to NYU classes under the 'Macro Assignment 08' category.</p>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./macro8_files/jquery.min.js"></script>
+    <script src="./macro8_files/bootstrap.min.js"></script>
+    <script src="./macro8_files/docs.min.js"></script>
+  
+
+</body></html>
