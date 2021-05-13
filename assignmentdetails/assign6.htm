@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/assignment06.php -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>CSCI-UA.0061 : Fall 2020</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./assign6_files/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./assign6_files/style.css" rel="stylesheet">
+    
+    <style type="text/css">
+	
+		.imageholder {
+			border: 1px solid #eee;
+			padding: 25px;
+			width: 600px;
+			margin-bottom: 50px;
+		}    
+		
+		.imageholder img {
+			width: 500px;
+		}
+	    
+	</style>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  <script data-dapp-detection="">!function(){let e=!1;function n(){if(!e){const n=document.createElement("meta");n.name="dapp-detected",document.head.appendChild(n),e=!0}}if(window.hasOwnProperty("ethereum")){if(window.__disableDappDetectionInsertion=!0,void 0===window.ethereum)return;n()}else{var t=window.ethereum;Object.defineProperty(window,"ethereum",{configurable:!0,enumerable:!1,set:function(e){window.__disableDappDetectionInsertion||n(),t=e},get:function(){if(!window.__disableDappDetectionInsertion){const e=arguments.callee;e&&e.caller&&e.caller.toString&&-1!==e.caller.toString().indexOf("getOwnPropertyNames")||n()}return t}})}}();</script><style id="holderjs-style" type="text/css"></style></head>
+
+  <body data-new-gr-c-s-check-loaded="14.1001.0" data-gr-ext-installed="">
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/index.html">Web Development &amp; Programming, Fall 2020</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li><a href="https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/index.html">Home</a></li>
+            <li><a href="https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/syllabus.html">Syllabus</a></li>
+            <li class="active"><a href="https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/schedule.html">Schedule</a></li>
+          </ul>
+        </div>
+        
+        <div id="content" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" data-read-aloud-multi-block="true">
+	        <h1 class="page-header" data-speechify-sentence="">Assignment 06: Matching Game</h1>
+					
+		  	<p data-speechify-sentence="">For this assignment you will be creating 'matching game' that will allow visitors to try and match a series of hidden tokens.  Speed is key, and the best time will be stored as the 'high score' on your computer - future players will need to try and beat that score in order to become the new matching champion! Here's a quick video that shows the basic features of the system:</p>
+
+<iframe width="560" height="315" src="./assign6_files/iPYGPMHEFTg.html" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+			<p data-speechify-sentence="">Your program should do the following. <a href="https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/images/assignment06/assignment06_images.zip" target="_blank">You can download all of the artwork used in this project here</a>.</p>
+		  	
+		  	<ul data-read-aloud-multi-block="true">
+			  	<li data-read-aloud-multi-block="true">Layout
+			  		<ul data-read-aloud-multi-block="true">
+				  		<li data-speechify-sentence="">A 'start' screen that introduces the user to your game and provides them with a button to start the game.  This element should be visible to the user when the page loads.</li>
+				  		<li data-speechify-sentence="">A 'play' screen that contains the play area as well as an indicator to show how much time has elapsed.  Note that in the video above this screen contains a 4x6 grid of Pokeballs that you can click on. When setting up your page do not add these images to your HTML as you will probably want to do this using JavaScript.  Instead, just create a container to hold your images when you do end up creating them.  Set up this element to be invisible when the page initially loads.</li>
+				  		<li data-speechify-sentence="">A 'game over' screen that shows the user's score as well as the all time high score.  It should also contain a button to start the game up again.  This element should be invisible when the page loads.</li>
+			  		</ul>
+			  	</li>
+			  	<li data-read-aloud-multi-block="true">Setting Up the Game
+			  		<ul data-read-aloud-multi-block="true">
+				  		<li data-speechify-sentence="">Clicking on the initial 'play game' button should swap the display so that the 'play' screen is visible.</li>
+				  		<li data-speechify-sentence="">At this point you will probably want to create your game tokens.  Each token should visually display itself as a Pokeball (or something else, you can swap in your own artwork). Every token should also have a "secret" image attached to it.  Here's an array that may be helpful in doing this:
+				  			<pre>var assets = ['snorlax.png', 'electrabuzz.png', 'chansey.png', 'oddish.png',
+              'pikachu.png', 'paras.png', 'arcanine.png', 'ponita.png',
+              'venonat.png', 'eggsecute.png', 'machop.png', 'pidgey.png',
+              'psyduck.png', 'tauros.png', 'vulpix.png', 'gloom.png',
+              'krabby.png', 'butterfree.png', 'bulbasaur.png', 'clefairy.png',
+              'koffing.png', 'goldeen.png', 'magikarp.png', 'beedrill.png',
+              'lapras.png', 'meowth.png', 'ekans.png', 'jigglypuff.png',
+              'horsea.png', 'polywog.png', 'sandshrew.png', 'rattata.png',
+              'gengar.png', 'eevee.png', 'bellsprout.png', 'squirtle.png',
+              'seel.png', 'caterpie.png']</pre>
+				  		</li>
+				  		<li data-speechify-sentence="">You will need to select 6 random images from this list and then assign 2 of your tokens to store these images (so that every token has a 'match'). Hint: use the <code>data-</code> specification to store an image filename along with your newly created tokens</li>
+				  		<li data-speechify-sentence="">Each token should be clickable - when they are clicked they should swap to their 'secret' image.</li>
+				  		<li data-speechify-sentence="">Next, you will need to figure out how to determine if a match has been made.  Here's a hint - create two variables (token1 and token2) and default them both to <code>false</code>.  When the first token is pressed update token1 with a reference to the item that was clicked.  When the next token is pressed you can compare their secret images - if they are the same they should stay visible, and if not they should both go back to their normal non-secret image.</li>
+				  		<li data-speechify-sentence="">If a non-match occurs your tokens should pause for a second so the user can see them before they revert back to their non-secret image.  Hint:  use <code>setTimeout</code> to call a function after a delay!</li>
+				  		<li data-speechify-sentence="">The game should keep track of the elapsed time.  Hint: you may need another <code>setTimeout</code> or <code>setInterval</code> call to periodically update the timer.</li>
+				  		<li data-speechify-sentence="">When all tokens have been selected the game should transition to the 'game over' screen.</li>
+			  		</ul>
+			  	</li>
+			  	<li data-read-aloud-multi-block="true">Game Over Screen
+			  		<ul data-read-aloud-multi-block="true">
+				  		<li data-speechify-sentence="">The user's time should be displayed.</li>
+				  		<li data-speechify-sentence="">The best time should also be displayed - you can do this by using <code>localStorage</code> to store the best time. Hint: default the best time to be something huge if it doesn't exist when the page loads so that the first time the user plays their time will automatically be the best time.</li>
+				  		<li data-speechify-sentence="">If the user beats the best time their time should replace the best time being stored in <code>localStorage</code></li>
+				  		<li data-speechify-sentence="">The user should be able to click and transition back to the 'game' screen from here -- this should reset the clock and re-randomize the game board with new tokens as well.</li>
+			  		</ul>
+			  	</li>			  	
+		  	</ul>
+		  	
+		  	<p data-speechify-sentence="">Note that your program should be free of logic errors and you will need to test your program to ensure that it works under all circumstances.  This includes the following:</p>
+		  	
+		  	<ul data-read-aloud-multi-block="true">
+			  	<li data-speechify-sentence="">Click spamming: make sure that the game doesn't "break" if you click too quickly (i.e. you click on 3 images when you really should have only clicked on 2)</li>
+			  	<li data-speechify-sentence="">Double clicking: if the user clicks on the same image twice this should not "break" the game.</li>
+			  	<li data-speechify-sentence="">The timer should stop when the game ends (it shouldn't continue after the user has finished a round)</li>
+		  	</ul>
+		  	
+		  	
+		  	<h2 data-speechify-sentence="">Advanced Features</h2>
+		  	
+		  	<p data-speechify-sentence="">Next, implement the following features into your game.</p>
+		  	
+		  	<ul data-read-aloud-multi-block="true">
+			  	<li data-speechify-sentence="">Leaderboard:  Keep track of the 3 best scores for your game using <code>localStorage</code>.  Allow the user to type in their name if they earn a best score and store this name in <code>localStorage</code> along with their time.  Display this on the 'game over' screen along with their score.</li>
+			  	<li data-speechify-sentence="">Game Expansion:  Give the user a choice as to the size of their board (easy: 3x4 board; medium: 4x5 board; hard: 5x6 board).  Update your leaderboard so that you have different "high scores" for each difficulty level.</li>
+			  	<li data-speechify-sentence="">Sound: Trigger sounds when the user gets a correct / incorrect match.</li>
+		  	</ul>			  	
+			  	
+			<h2 data-speechify-sentence="">Extra Credit</h2>
+			
+			<p data-speechify-sentence="">Attempt these features only if you have time!</p>
+			<ul data-read-aloud-multi-block="true">
+				<li data-speechify-sentence="">Custom Game Tokens: Allow the user to change the graphics used in the game - you will need to find / create your own graphics for this.  Remember the user's choice using <code>localStorage</code> so that when the come back to the game to play another round their preferred graphics set / board size is pre-selected.</li>
+			  	<li data-speechify-sentence="">Animation:  Implement a "card flipping" animation when the user selects a graphic. If the match is incorrect you should use the animation to flip it back to its original state. <a href="https://www.w3schools.com/howto/howto_css_flip_card.asp" target="_blank">Here is a tutorial and some CSS rules that might be useful for this task</a>. <strong>Note:</strong> this is a CSS heavy task that can be very challenging.  I recommend that you get everything else working before you even begin looking into this task.  Also, make a copy of your work so that you can go back to your previous version since you will need to make a number of changes to the structure of your code to incorporate these features. Also note that you can't simply take the code on this page and use it as-is - the code shown here implements a flipping animation on a <code>hover</code> event, which isn't what you want.  Instead, you want this to work using a JavaScript click event.  You will most likely be reworking the hierarchy of your tokens and adding / removing special classes to your tokens to make this work.</li>
+		  	</ul>
+		  	
+		  	<p data-speechify-sentence="">Thoroughly test your work and make sure that it meets the requirements set forth above.  When you are finished, post your project to the i6 server and link it from your main menu page.  We should be able to visit your 'webdev' folder and click on the link to the fourth assignment and visit your page.  Also create a ZIP archive of your work and submit it to NYU classes under the 'Assignment 05' category.</p>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./assign6_files/jquery.min.js"></script>
+    <script src="./assign6_files/bootstrap.min.js"></script>
+    <script src="./assign6_files/docs.min.js"></script>
+  
+
+<div id="speechify-selection-button-container">
+    <button class="always-inactive speechify-button plyr__control" data-loading="false" data-plyr="play">
+      
+<svg class="outline-play-icon" width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M7.125 4.67029C7.29167 4.76651 7.29167 5.00707 7.125 5.1033L1.29481 8.46936C1.12814 8.56559 0.919811 8.4453 0.919811 8.25285L0.919811 1.52073C0.919811 1.32828 1.12814 1.208 1.29481 1.30422L7.125 4.67029Z" fill="white" stroke="#4856fd" stroke-width="1.5"></path>
+</svg>
+
+      
+<svg class="icon--not-pressed" role="presentation" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" viewBox="0 0 26 26">
+  <path fill="#FFF" fill-rule="evenodd" d="M18.594 14.789l-10.7 5.35c-.988.493-2.189.093-2.683-.895C5.072 18.966 5 18.66 5 18.35V7.65c0-1.104.895-2 2-2 .31 0 .617.072.894.211l10.7 5.35c.988.494 1.388 1.695.894 2.683-.193.387-.507.701-.894.895z"></path>
+</svg>
+
+    </button>
+  </div><div id="speechify-paragraph-hover-button-container"></div></body></html>

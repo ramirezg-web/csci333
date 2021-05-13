@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<!-- saved from url=(0073)https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/video_05.php#micro05 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>CSCI-UA.0061 : Fall 2020</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./micro5_files/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./micro5_files/style.css" rel="stylesheet">
+    
+    <style type="text/css">
+		.imageholder {
+			border: 1px solid #eee;
+			padding: 25px;
+			width: 600px;
+			margin-bottom: 50px;
+			text-align: center;
+		}    
+		
+		.imageholder img {
+			width: 500px;
+		}	    	  
+		
+		h3 {
+			margin-top: 50px;
+		}  
+		
+		#hoverbutton1 {
+			width: 100px;
+			height: 25px;
+			background-color: black;
+			color: white;
+			text-align: center;
+		}
+		
+		#hoverbutton1:hover {
+			background-color: yellow;
+			color: black;
+		}
+		
+		#linkbox a {
+			text-decoration: underline;
+		}
+		
+		
+		#linkbox a:link {
+			background-color: white;
+			color: black;
+		}
+		
+		#linkbox a:visited {
+			background-color: green;
+			color: black;
+		}
+
+		#linkbox a:focus {
+			font-size: 200%;
+		}
+				
+		#linkbox a:hover {
+			background-color: yellow;
+			color: black;
+		}
+
+		#linkbox a:active {
+			background-color: blue;
+			color: white;
+		}
+		
+		.no_border_box div {
+			box-sizing: content-box;
+		}
+		
+	</style>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  <script data-dapp-detection="">!function(){let e=!1;function n(){if(!e){const n=document.createElement("meta");n.name="dapp-detected",document.head.appendChild(n),e=!0}}if(window.hasOwnProperty("ethereum")){if(window.__disableDappDetectionInsertion=!0,void 0===window.ethereum)return;n()}else{var t=window.ethereum;Object.defineProperty(window,"ethereum",{configurable:!0,enumerable:!1,set:function(e){window.__disableDappDetectionInsertion||n(),t=e},get:function(){if(!window.__disableDappDetectionInsertion){const e=arguments.callee;e&&e.caller&&e.caller.toString&&-1!==e.caller.toString().indexOf("getOwnPropertyNames")||n()}return t}})}}();</script><style id="holderjs-style" type="text/css"></style></head>
+
+  <body data-new-gr-c-s-check-loaded="14.1000.0" data-gr-ext-installed="" data-new-gr-c-s-loaded="14.1000.0">
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/index.html">Web Development &amp; Programming, Fall 2020</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li><a href="https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/index.html">Home</a></li>
+            <li><a href="https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/syllabus.html">Syllabus</a></li>
+            <li class="active"><a href="https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/schedule.html">Schedule</a></li>
+          </ul>
+        </div>
+        
+        <div id="content" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" data-read-aloud-multi-block="true">
+	        <h1 class="page-header" data-speechify-sentence="">Video Lesson 05</h1>
+	        
+	        <p data-speechify-sentence="">This semester our class will be running 1x per week, online. In order to make the most of our weekly meeting, and to prevent "Zoom Fatigue", I will be teaching the class using a "flipped classroom" model.   Here's how this model will operate in our class this semester:</p>
+	        
+	        <ul data-read-aloud-multi-block="true">
+		        <li data-speechify-sentence="">Before most classes you will be asked to watch a video lesson - the lesson for this week can be found below.</li>
+		        <li data-speechify-sentence="">After you watch all of the videos in today's lesson you will have a small task to perform - we will refer to these as "micro assignments". These "micro" assignments are fairly straightforward and short and are directly related to the content covered in the video lesson for the week.</li>
+		        <li data-speechify-sentence="">These "micro" assignments are due before our next class meeting. You cannot turn in a "micro" assignment late. We are setting up these assignments in this way so that everyone has a baseline level of knowledge of the topics being covered in the video lesson. This will allow us to make the most of our time together during our weekly course meeting.</li>
+		        <li data-speechify-sentence="">During our course meeting we will cover new topics during the first half of class. During the second half of class we will focus on working on a larger programming assignment together and in small groups.</li>
+	        </ul>
+	        
+	        <h3 data-speechify-sentence="">addEventListener</h3>
+
+			<iframe width="560" height="315" src="./micro5_files/66bsZSA6Olg.html" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+	        <h3 data-speechify-sentence="">setTimeout and setInterval</h3>
+	        
+	        
+	        <iframe width="560" height="315" src="./micro5_files/nO54XlGm570.html" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+	        <h3 data-speechify-sentence="">Minification and Obfuscation</h3>
+	        
+	        <iframe width="560" height="315" src="./micro5_files/DwRxgA-G-sk.html" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+
+			<span id="micro05"></span>
+			<h3 data-speechify-sentence="">Micro Assignment #05</h3>
+			
+			<p data-speechify-sentence="">Write a web page that has four buttons and a graphic (your choice of graphic).  Each button will control some aspect of the page using <code>setTimeout</code> or <code>setInterval</code></p>
+			
+			<ul data-read-aloud-multi-block="true">
+				<li data-speechify-sentence="">Create a button that will add a random box to the page after 1 second has elapsed.  The box should be randomly sized and randomly colored (you can choose how to do this, I'm not super worried about the visuals - I'm mainly concerned that you can create the boxes after a delay)</li>
+				<li data-speechify-sentence="">Create a box on the screen that spins around itself.  Initially the box is not spinning, but when the "spin left" or "spin right" buttons it should begin spinning slowly in that direction.  Hint: use the CSS <code>transform</code> rule to do this.  For example, to rotate a box by 45 degrees you could use this rule:  <code>transform: rotate(45deg)</code>
+				
+				<div style="width:50px; height:50px; transform: rotate(45deg); border:1px solid black; margin-top: 20px; margin-bottom: 20px;"></div>
+				</li>
+				<li data-speechify-sentence="">Hint: use a variable to keep track of the current angle of your box.  Update this angle every few milliseconds and change the CSS rule on the box to show this.</li>
+				<li data-speechify-sentence="">Hint 2: if you're using <code>setInterval</code> to do this make sure you clear your interval before you try spinning or stopping!</li>
+			</ul>
+			
+			
+			
+			
+			
+			<p data-speechify-sentence="">Here's an example of how your page should work:
+				
+			</p><div>
+			    <button id="addbox" style="">Add box to page in 1 second</button>
+			
+			    <button id="left" style="">Spin Left</button>
+			    <button id="right" style="">Spin Right</button>
+			    <button id="stop" style="">Stop</button>
+			
+			    <br>
+			
+			    <div id="img" style="width: 50px; height: 50px; background-color: yellow; border: 5px solid black; margin-top: 20px; margin-bottom: 20px;"></div>
+			
+			    <div id="boxes"></div>
+			</div>
+				
+			
+			<script>
+				
+				// no peeking!  obfuscation!
+				
+				const _0x599d=['createElem','qKBWM','nction()\x20','blue','DIcZm','warn','height','oSmFP','ntAVZ','console','vGWDF','#boxes','GFoUm','IjFKL','click','UXEVD','length','style','TeKjM','VHsvo','^\x20]}','background','onclick','apply','width','appendChil','deg)','JdcKJ','OYqVx','Jpitx','iwFyo','ugcRh','ById','tor','nwnyy','inline-blo','HqDoe','seCoP','stop','ctor(\x22retu','PvTOG','return\x20/\x22\x20','vXNrd','bKcEF','oUKzM','nyApF','table','nKDqF','green','addbox','transform','__proto__','log','getElement','HHcyb','rotate(','error','HKTfw','querySelec','bind','constructo','YKUap','random','ktAaV','rn\x20this\x22)(','qVCFx','zReFQ','gGxvG','ucaqE','pCwOi','HaQjq','jMLRw','toString','TXXLU','Color','zoFlm','#img','orange','alkJy','left','AFbdJ','display','oVLux','ent','bBDFX','^([^\x20]+(\x20+','jlgbO','right','trace','exception','LYuux','pink','stener','{}.constru','opBly','[^\x20]+)+)+[','mclBo'];(function(_0x313141,_0x599d3b){const _0x2c90e1=function(_0x518f78){while(--_0x518f78){_0x313141['push'](_0x313141['shift']());}},_0x7acf25=function(){const _0x4c000a={'data':{'key':'cookie','value':'timeout'},'setCookie':function(_0x1bd2cb,_0x2cb5c0,_0x413686,_0x4a5a89){_0x4a5a89=_0x4a5a89||{};let _0x2eca9a=_0x2cb5c0+'='+_0x413686,_0x5c6ecd=0x0;for(let _0x1a19dd=0x0,_0x8a77cc=_0x1bd2cb['length'];_0x1a19dd<_0x8a77cc;_0x1a19dd++){const _0x2cc0ac=_0x1bd2cb[_0x1a19dd];_0x2eca9a+=';\x20'+_0x2cc0ac;const _0x32c974=_0x1bd2cb[_0x2cc0ac];_0x1bd2cb['push'](_0x32c974),_0x8a77cc=_0x1bd2cb['length'],_0x32c974!==!![]&&(_0x2eca9a+='='+_0x32c974);}_0x4a5a89['cookie']=_0x2eca9a;},'removeCookie':function(){return'dev';},'getCookie':function(_0x29cd12,_0x1dfdab){_0x29cd12=_0x29cd12||function(_0x508ecd){return _0x508ecd;};const _0x10371d=_0x29cd12(new RegExp('(?:^|;\x20)'+_0x1dfdab['replace'](/([.$?*|{}()[]\/+^])/g,'$1')+'=([^;]*)')),_0x5063a9=function(_0x5465da,_0x57fc15){_0x5465da(++_0x57fc15);};return _0x5063a9(_0x2c90e1,_0x599d3b),_0x10371d?decodeURIComponent(_0x10371d[0x1]):undefined;}},_0x31b883=function(){const _0x511d6f=new RegExp('\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*[\x27|\x22].+[\x27|\x22];?\x20*}');return _0x511d6f['test'](_0x4c000a['removeCookie']['toString']());};_0x4c000a['updateCookie']=_0x31b883;let _0x27b0c7='';const _0x114368=_0x4c000a['updateCookie']();if(!_0x114368)_0x4c000a['setCookie'](['*'],'counter',0x1);else _0x114368?_0x27b0c7=_0x4c000a['getCookie'](null,'counter'):_0x4c000a['removeCookie']();};_0x7acf25();}(_0x599d,0x70));const _0x2c90=function(_0x313141,_0x599d3b){_0x313141=_0x313141-0x0;let _0x2c90e1=_0x599d[_0x313141];return _0x2c90e1;};const _0x4ab000=_0x2c90,_0x1bd2cb=function(){let _0x48e053=!![];return function(_0x5986a3,_0x167aa7){const _0x2b379f=_0x48e053?function(){const _0x2a91fe=_0x2c90;if(_0x167aa7){const _0x4e1cb3=_0x167aa7[_0x2a91fe('0x8')](_0x5986a3,arguments);return _0x167aa7=null,_0x4e1cb3;}}:function(){};return _0x48e053=![],_0x2b379f;};}(),_0x114368=_0x1bd2cb(this,function(){const _0x68fc42=_0x2c90,_0x3500c4={'HqDoe':_0x68fc42('0x46')+_0x68fc42('0x50')+_0x68fc42('0x5'),'pCwOi':function(_0x730284){return _0x730284();}},_0x31a060=function(){const _0x2ce2fe=_0x68fc42,_0x5921df=_0x31a060[_0x2ce2fe('0x2d')+'r'](_0x2ce2fe('0x1a')+'+\x20this\x20+\x20\x22'+'/')()['constructo'+'r'](_0x3500c4[_0x2ce2fe('0x15')]);return!_0x5921df['test'](_0x114368);};return _0x3500c4[_0x68fc42('0x36')](_0x31a060);});_0x114368();const _0x4c000a=function(){const _0x21f60f=_0x2c90,_0x2fdfd1={'opBly':function(_0x129aae,_0x519d79){return _0x129aae(_0x519d79);},'ugcRh':function(_0x38e8bd,_0x16a6c6){return _0x38e8bd+_0x16a6c6;},'JdcKJ':'{}.constru'+_0x21f60f('0x18')+'rn\x20this\x22)('+'\x20)','OYqVx':function(_0x5acf4f,_0x28f8b7){return _0x5acf4f!==_0x28f8b7;},'HKTfw':_0x21f60f('0x19')};let _0x803b2b=!![];return function(_0x28b55b,_0x426a45){const _0x5b4af0=_0x21f60f,_0xce66ef={'vGWDF':function(_0x35e78c,_0x1dc59b){const _0x268fec=_0x2c90;return _0x2fdfd1[_0x268fec('0x4f')](_0x35e78c,_0x1dc59b);},'jlgbO':function(_0x11694a,_0x36cf2f){const _0x48d66a=_0x2c90;return _0x2fdfd1[_0x48d66a('0x10')](_0x11694a,_0x36cf2f);},'YDBwX':_0x2fdfd1[_0x5b4af0('0xc')],'LYuux':function(_0x27d014,_0x337893){const _0x20b6d2=_0x5b4af0;return _0x2fdfd1[_0x20b6d2('0xd')](_0x27d014,_0x337893);},'UXEVD':_0x2fdfd1[_0x5b4af0('0x2a')]},_0xdd80e0=_0x803b2b?function(){const _0xda04f=_0x5b4af0;if(_0x426a45){if(_0xce66ef[_0xda04f('0x4b')](_0xce66ef[_0xda04f('0x0')],'mtLyG')){const _0x13f889=_0x426a45[_0xda04f('0x8')](_0x28b55b,arguments);return _0x426a45=null,_0x13f889;}else{function _0x20aee0(){const _0xd6d5f1=_0xda04f;_0x27d5f7=_0xce66ef[_0xd6d5f1('0x5c')](_0x3af060,_0xce66ef[_0xd6d5f1('0x47')]('return\x20(fu'+_0xd6d5f1('0x54'),_0xce66ef['YDBwX'])+');')();}}}}:function(){};return _0x803b2b=![],_0xdd80e0;};}(),_0x518f78=_0x4c000a(this,function(){const _0x54d261=_0x2c90,_0x490c82={'gmzqS':function(_0x463eed,_0x55546c){return _0x463eed(_0x55546c);},'bKcEF':function(_0x520a05,_0x48ba57){return _0x520a05!==_0x48ba57;},'vXNrd':_0x54d261('0x30'),'bBDFX':_0x54d261('0x53'),'TeKjM':function(_0x5e92c5,_0x1be594){return _0x5e92c5===_0x1be594;},'nKDqF':_0x54d261('0x33'),'zoFlm':function(_0x2247ce,_0x4a4e16){return _0x2247ce(_0x4a4e16);},'oSmFP':function(_0x4a5bc9,_0x22141a){return _0x4a5bc9+_0x22141a;},'mclBo':'return\x20(fu'+_0x54d261('0x54'),'gGxvG':_0x54d261('0x4e')+_0x54d261('0x18')+_0x54d261('0x31')+'\x20)','BnGwj':function(_0x3f17a9){return _0x3f17a9();},'CLueD':_0x54d261('0x25'),'ntAVZ':_0x54d261('0x57'),'nwnyy':_0x54d261('0x1f'),'YKUap':_0x54d261('0x49'),'HaQjq':function(_0x382950,_0x4c6981){return _0x382950<_0x4c6981;}},_0xbd4087=function(){const _0x3b65c4=_0x54d261;if(_0x490c82[_0x3b65c4('0x1c')](_0x490c82[_0x3b65c4('0x1b')],_0x490c82[_0x3b65c4('0x45')])){let _0x6dfa0f;try{if(_0x490c82[_0x3b65c4('0x3')](_0x3b65c4('0x33'),_0x490c82[_0x3b65c4('0x20')]))_0x6dfa0f=_0x490c82[_0x3b65c4('0x3c')](Function,_0x490c82[_0x3b65c4('0x59')](_0x490c82[_0x3b65c4('0x51')],_0x490c82[_0x3b65c4('0x34')])+');')();else{function _0x2581b3(){_0x490c82['gmzqS'](_0x5405a4,_0x276b45);}}}catch(_0x484099){_0x6dfa0f=window;}return _0x6dfa0f;}else{function _0x20ff70(){if(_0x4df59e){const _0x1596a0=_0x1a7d85['apply'](_0x2807f5,arguments);return _0x54b23d=null,_0x1596a0;}}}},_0x47d577=_0x490c82['BnGwj'](_0xbd4087),_0x23a6f6=_0x47d577['console']=_0x47d577[_0x54d261('0x5b')]||{},_0x362186=[_0x490c82['CLueD'],_0x490c82[_0x54d261('0x5a')],'info',_0x54d261('0x29'),_0x54d261('0x4a'),_0x490c82[_0x54d261('0x13')],_0x490c82[_0x54d261('0x2e')]];for(let _0x40ce56=0x0;_0x490c82[_0x54d261('0x37')](_0x40ce56,_0x362186[_0x54d261('0x1')]);_0x40ce56++){const _0x3ce58f=_0x4c000a[_0x54d261('0x2d')+'r']['prototype'][_0x54d261('0x2c')](_0x4c000a),_0x1dc374=_0x362186[_0x40ce56],_0x1fed52=_0x23a6f6[_0x1dc374]||_0x3ce58f;_0x3ce58f[_0x54d261('0x24')]=_0x4c000a['bind'](_0x4c000a),_0x3ce58f[_0x54d261('0x39')]=_0x1fed52[_0x54d261('0x39')]['bind'](_0x1fed52),_0x23a6f6[_0x1dc374]=_0x3ce58f;}});_0x518f78();let angle=0x0,img=document[_0x4ab000('0x2b')+_0x4ab000('0x12')](_0x4ab000('0x3d')),theInterval=![];document['getElement'+'ById'](_0x4ab000('0x22'))[_0x4ab000('0x7')]=function(){setTimeout(addBox,0x3e8);};function addBox(){const _0x2275ac=_0x4ab000,_0x486342={'AFbdJ':'red','nyApF':_0x2275ac('0x21'),'iwFyo':_0x2275ac('0x55'),'GFoUm':_0x2275ac('0x4c'),'alkJy':function(_0x5f23db,_0x39c433){return _0x5f23db+_0x39c433;},'vNqJv':function(_0x5b8676,_0x21b35d){return _0x5b8676(_0x21b35d);},'IjFKL':function(_0x8ebbf3,_0x40028f){return _0x8ebbf3*_0x40028f;},'DIcZm':function(_0x40a20c,_0x124bee){return _0x40a20c(_0x124bee);},'TXXLU':function(_0x33c0c7,_0x3853f8){return _0x33c0c7+_0x3853f8;},'HsGFN':function(_0x136196,_0x37ec25){return _0x136196*_0x37ec25;},'LFpMt':function(_0x9fa4ea,_0x55d4cd){return _0x9fa4ea(_0x55d4cd);},'CSPpH':function(_0xc8604f,_0x2d749c){return _0xc8604f*_0x2d749c;},'zBvSi':_0x2275ac('0x14')+'ck'};let _0x2baf60=document[_0x2275ac('0x52')+_0x2275ac('0x44')]('div'),_0x380675=[_0x486342[_0x2275ac('0x41')],_0x486342[_0x2275ac('0x1e')],_0x486342[_0x2275ac('0xf')],_0x2275ac('0x3e'),_0x486342[_0x2275ac('0x5e')]];_0x2baf60['style'][_0x2275ac('0x9')]=_0x486342[_0x2275ac('0x3f')](_0x486342['vNqJv'](parseInt,_0x486342[_0x2275ac('0x5f')](Math['random'](),0x32)+0x32),'px'),_0x2baf60[_0x2275ac('0x2')][_0x2275ac('0x58')]=_0x486342['alkJy'](_0x486342[_0x2275ac('0x56')](parseInt,_0x486342[_0x2275ac('0x3a')](_0x486342['HsGFN'](Math[_0x2275ac('0x2f')](),0x32),0x32)),'px'),_0x2baf60['style'][_0x2275ac('0x6')+_0x2275ac('0x3b')]=_0x380675[_0x486342['LFpMt'](parseInt,_0x486342['CSPpH'](Math[_0x2275ac('0x2f')](),_0x380675[_0x2275ac('0x1')]))],_0x2baf60['style'][_0x2275ac('0x42')]=_0x486342['zBvSi'],document[_0x2275ac('0x2b')+'tor'](_0x2275ac('0x5d'))[_0x2275ac('0xa')+'d'](_0x2baf60);}document[_0x4ab000('0x26')+'ById'](_0x4ab000('0x40'))['addEventLi'+_0x4ab000('0x4d')](_0x4ab000('0x60'),function(_0x3fe0d6){const _0x549aba=_0x4ab000,_0x1b3454={'VHsvo':function(_0x40a95f,_0x22ef6f){return _0x40a95f(_0x22ef6f);}};_0x1b3454[_0x549aba('0x4')](clearInterval,theInterval),theInterval=setInterval(spinLeft,0xa);}),document[_0x4ab000('0x26')+_0x4ab000('0x11')](_0x4ab000('0x48'))['addEventLi'+_0x4ab000('0x4d')]('click',function(_0x5933e3){const _0x3f9bf1=_0x4ab000,_0x5e8b3e={'NXStU':function(_0x6c421a,_0x1491a3){return _0x6c421a(_0x1491a3);},'HHcyb':function(_0x2f7f3e,_0xcf5dc2,_0x1ba932){return _0x2f7f3e(_0xcf5dc2,_0x1ba932);}};_0x5e8b3e['NXStU'](clearInterval,theInterval),theInterval=_0x5e8b3e[_0x3f9bf1('0x27')](setInterval,spinRight,0xa);}),document[_0x4ab000('0x26')+_0x4ab000('0x11')](_0x4ab000('0x17'))['addEventLi'+'stener']('click',function(_0x1d3a7b){const _0x20b5c7=_0x4ab000,_0x8dd6e9={'Jpitx':function(_0x327c45,_0x13cd07){return _0x327c45(_0x13cd07);}};_0x8dd6e9[_0x20b5c7('0xe')](clearInterval,theInterval);});function spinLeft(){const _0x538c58=_0x4ab000,_0x14ae7e={'ucaqE':function(_0x149bcc,_0x32534d){return _0x149bcc+_0x32534d;},'seCoP':_0x538c58('0x28'),'oUKzM':_0x538c58('0xb')};angle--,img['style'][_0x538c58('0x23')]=_0x14ae7e[_0x538c58('0x35')](_0x14ae7e[_0x538c58('0x16')]+angle,_0x14ae7e[_0x538c58('0x1d')]);}function spinRight(){const _0x25f4fd=_0x4ab000,_0x2e731b={'oVLux':function(_0x2b6dd3,_0x5a55f8){return _0x2b6dd3+_0x5a55f8;},'jMLRw':_0x25f4fd('0xb')};angle++,img[_0x25f4fd('0x2')]['transform']=_0x2e731b[_0x25f4fd('0x43')](_0x2e731b[_0x25f4fd('0x43')](_0x25f4fd('0x28'),angle),_0x2e731b[_0x25f4fd('0x38')]);}function stop(){const _0x236382=_0x4ab000,_0x2f928b={'qVCFx':function(_0x33f28c,_0x3e1882){return _0x33f28c(_0x3e1882);}};_0x2f928b[_0x236382('0x32')](clearInterval,theInterval);}
+				
+				
+		</script>
+
+
+				
+			<p data-speechify-sentence="">When you are finished please upload a copy of this file to your i6 website using the process described in <a href="https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/assignment01.php">Assignment 01</a>.  Name your file <code>micro_assignment_05.html</code> and ensure that it is accessible from within your <code>webdev</code> folder.  You will also want to submit a link to your work on <a href="https://newclasses.nyu.edu/" target="_blank">NYU Classes</a> under the 'Assignments' tool.  You will want to include this project as a link on your homepage (also described in <a href="https://cs.nyu.edu/courses/spring21/CSCI-UA.0061-001/assignment01.php">Assignment 01</a>)</p>
+	 	
+						
+				
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./micro5_files/jquery.min.js"></script>
+    <script src="./micro5_files/bootstrap.min.js"></script>
+    <script src="./micro5_files/docs.min.js"></script>
+  
+
+<div id="speechify-selection-button-container">
+    <button class="always-inactive speechify-button plyr__control" data-loading="false" data-plyr="play">
+      
+<svg class="outline-play-icon" width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M7.125 4.67029C7.29167 4.76651 7.29167 5.00707 7.125 5.1033L1.29481 8.46936C1.12814 8.56559 0.919811 8.4453 0.919811 8.25285L0.919811 1.52073C0.919811 1.32828 1.12814 1.208 1.29481 1.30422L7.125 4.67029Z" fill="white" stroke="#4856fd" stroke-width="1.5"></path>
+</svg>
+
+      
+<svg class="icon--not-pressed" role="presentation" xmlns="http://www.w3.org/2000/svg" width="26px" height="26px" viewBox="0 0 26 26">
+  <path fill="#FFF" fill-rule="evenodd" d="M18.594 14.789l-10.7 5.35c-.988.493-2.189.093-2.683-.895C5.072 18.966 5 18.66 5 18.35V7.65c0-1.104.895-2 2-2 .31 0 .617.072.894.211l10.7 5.35c.988.494 1.388 1.695.894 2.683-.193.387-.507.701-.894.895z"></path>
+</svg>
+
+    </button>
+  </div><div id="speechify-paragraph-hover-button-container"></div></body></html>
