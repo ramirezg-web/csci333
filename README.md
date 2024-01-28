@@ -2,6 +2,8 @@
 Welcome to the course website for CSCI-UA.0061 - Web Development & Programming!
 Here i've linked my projects for the course!
 
+ASSIGMENT WEBSITE https://ramirezg-web.github.io/csci333/
+
 Prerequisites
 Students wishing to enroll in this course must have successfully completed the following courses:
 CSCI-UA.0002 – Introduction to Computer Programming
